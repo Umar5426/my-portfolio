@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-*{
-  font-family: Outfit;
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+/* Add your custom styles here */
+* {
+  font-family: 'Outfit', sans-serif; /* Apply global font */
 }
