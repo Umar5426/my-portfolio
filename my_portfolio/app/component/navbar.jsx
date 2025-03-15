@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <>
     <div className='fixed top-0 right-0 w-11/12 h-1/2'>
-        <Image src={assets.header_bg_color.png} alt='' className='w-full'/>
+        <Image src={assets.header_bg_color} alt='' className='w-full'/>
     </div>
         <nav className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex 
             items-center justify-between z-50">
@@ -18,8 +18,8 @@ const Navbar = () => {
                 />
             </a>
 
-            <ul className="hidden lg:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 
-                bg-white bg-opacity-20 backdrop-blur-lg">
+            <ul className='hidden lg:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 
+                bg-white bg-opacity-90 backdrop-blur-lg'>
                 <li><a href="#top">Home</a></li>
                 <li><a href="#about">About me</a></li>
                 <li><a href="#services">Services</a></li>
@@ -27,7 +27,12 @@ const Navbar = () => {
                 <li><a href="#contact">Contact Me</a></li>
             </ul>
             
-            <div>
+            <div className='flex items-center gap-4'>
+
+                <button>
+                    <Image src={assets.moon_icon} alt='' className='w-6'/>
+                </button>
+
                 <a href='#contact' className='hidden lg:flex items-center gap-3 px-10 py-2.5 border
                  border-gray-500 rounded-full nl-4'> 
                     Contact
@@ -36,6 +41,10 @@ const Navbar = () => {
                         alt="Arrow Icon" className='w-3 h-3'
                         />
                 </a>
+
+                <button className='lg:hidden'>
+                    <Image src={assets.menu_black} alt='' width={30} height={30}/>
+                </button>
             </div>
         </nav>
     </>
