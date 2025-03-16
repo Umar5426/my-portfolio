@@ -14,21 +14,21 @@ const Navbar = () => {
 
   return (
     <>
-    <div className='fixed top-0 right-0 w-11/12 h-1/2'>
-        <Image src={assets.header_bg_color} alt='' className='w-full'/>
-    </div>
+        <div className="fixed top-0 right-0 -z-100 translate-y-[-80%]">
+            <Image src={assets.header_bg_color} alt="" className="w-full" />
+        </div>
+
         <nav className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex 
-            items-center justify-between z-50">
+            items-center justify-between z-50" >
             <a href="#top">
                 <Image 
                 src={assets.logo} 
                 alt="Logo"
-                className='w-28 cursor-pointer mr-12' 
+                className='w-28 cursor-pointer mr-14' 
                 />
             </a>
 
-            <ul className='hidden lg:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 
-                bg-white bg-opacity-90 backdrop-blur-lg'>
+            <ul className='hidden md:flex items-center gap-6 lg:flex rounded-full border-white px-12 py-3 bg-white/50'>
                 <li><a href="#top">Home</a></li>
                 <li><a href="#about">About me</a></li>
                 <li><a href="#services">Services</a></li>
