@@ -4,6 +4,16 @@ export const content = [
   "./components/**/*.{js,ts,jsx,tsx}",
 ];
 export const theme = {
-  extend: {},
+  extend: {
+    colors: {
+      lightHover: '#fcf4ff',
+      darkHover: '#2a004a',
+      darkTheme: '#11001f',
+    },
+    fontFamily: {
+      Outfit: ['Outfit', 'sans-serif'],
+      Ovo: ['Ovo', 'serif'],
+    },
+  },
 };
 export const plugins = [];
