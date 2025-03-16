@@ -1,19 +1,23 @@
 /** @type {import('tailwindcss').Config} */
-export const content = [
+const config = {
+  content: [
   "./pages/**/*.{js,ts,jsx,tsx}",
-  "./components/**/*.{js,ts,jsx,tsx}",
-];
-export const theme = {
-  extend: {
-    colors: {
-      lightHover: '#fcf4ff',
-      darkHover: '#2a004a',
-      darkTheme: '#11001f',
+  "./components/.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        lightHover: '#fcf4ff',
+        darkHover: '#2a004a',
+        darkTheme: '#11001f',
+      },
+      fontFamily: {
+        Outfit: ['Outfit', 'sans-serif'],
+        Ovo: ['Ovo', 'serif'],
+      },
     },
-    fontFamily: {
-      Outfit: ['Outfit', 'sans-serif'],
-      Ovo: ['Ovo', 'serif'],
-    },
-  },
+  }, 
+  plugins: []
 };
-export const plugins = [];
+
+export default config;
