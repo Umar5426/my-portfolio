@@ -1,11 +1,11 @@
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+export const outfit = Outfit({
   subsets: ["latin"], weight: ["400", "500", "600", "700"]
 });
 
-const ovo = Ovo({
+export const ovo = Ovo({
   subsets: ["latin"], weight: ["400"]
 });
 
@@ -17,8 +17,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${outfit.className} ${ovo.className} antialiased leading-8 overflow-x-hidden dark:bg-[#11001f] dark:text-white`}>
+    <body style={{fontFamily: `${outfit.style.fontFamily}, ${ovo.style.fontFamily}`}}
+    className="antialiased leading-8 overflow-x-hidden dark:bg-[#11001f] dark:text-white">
+
         {children}
       </body>
     </html>

@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
-* {
-  font-family: 'Outfit', sans-serif;
-  font-family: 'Ovo', serif;
-}
+@layer base {
+  :root {
+    --font-outfit: 'Outfit', sans-serif;
+    --font-ovo: 'Ovo', serif;
+  }
 
-:root {
-  --font-seri: 'Outfit', sans-serif;
-  --font-Ovo: 'Ovo', serif;
+  /* Apply to body to test */
+  body {
+    font-family: var(--font-outfit);
+  }
 }
