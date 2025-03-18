@@ -4,3 +4,8 @@
   font-family: 'Outfit', sans-serif;
   font-family: 'Ovo', serif;
 }
+
+:root {
+  --font-seri: 'Outfit', sans-serif;
+  --font-Ovo: 'Ovo', serif;
+}

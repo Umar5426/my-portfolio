@@ -11,7 +11,7 @@ const Header = () => {
                 <Image src={assets.profile_img} alt="profile image" className="rounded-full w-32" />
             </div>
             <div>
-                <h3 className="text-xl md:text-2xl mb-3 font-Ovo">
+                <h3 className="text-xl md:text-2xl mb-3 font-Outfit">
                     Hi, I'm Umar Khan
                     <Image src={assets.hand_icon} alt="hand icon" className="rounded-full w-6 inline-block ml-2" />
                 </h3>
