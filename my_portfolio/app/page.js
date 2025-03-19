@@ -1,5 +1,5 @@
 'use client'
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./component/navbar"
 import Header from "./component/header"
 import About from "./component/about";
@@ -11,16 +11,14 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
       setIsDarkMode(true);
-      document.documentElement.classList.add("dark");
-    } else {
+  } else {
+      document.documentElement.classList.remove('dark');
       setIsDarkMode(false);
-      document.documentElement.classList.remove("dark");
-    }
+  }
   }, []);
 
   useEffect(() => {
@@ -32,9 +30,6 @@ export default function Home() {
       localStorage.setItem("theme", "light");
     }
   }, [isDarkMode]);
-
-
-
 
   return (
     <>

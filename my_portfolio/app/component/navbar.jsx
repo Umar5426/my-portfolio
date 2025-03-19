@@ -23,7 +23,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
 
   return (
     <>
-        <div className="fixed top-0 right-0 -z-100 translate-y-[-80%]">
+        <div className="fixed top-0 right-0 -z-100 translate-y-[-80%] dark:hidden">
             <Image src={assets.header_bg_color} alt="" className="w-full" />
         </div>
 
@@ -46,8 +46,8 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
             </ul>
             
             <div className='flex items-center gap-4'>
-                <button onClick={() => setIsDarkMode(prev => !prev)} className='cursor-pointer'>
-                    <Image src={isDarkMode ? assets.sun_icon : assets.moon_icon} alt='' width={30} height={30} />
+                <button onClick={() => setIsDarkMode(prev => !prev)} className="cursor-pointer">
+                    <Image src={isDarkMode ? assets.sun_icon : assets.moon_icon} alt="Dark Mode Toggle" width={30} height={30} />
                 </button>
 
                 <a href='#contact' className='hidden lg:flex items-center gap-3 px-10 py-2.5 border
