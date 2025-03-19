@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image';
 import { assets } from '@/assets/assets';
+import ThemeToggle from '../theme/themeToggle';
 
 const Navbar = ({isDarkMode, setIsDarkMode}) => {
     const sideMenuRef = useRef();
@@ -46,9 +47,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
             </ul>
             
             <div className='flex items-center gap-4'>
-                <button onClick={() => setIsDarkMode(prev => !prev)} className="cursor-pointer">
-                    <Image src={isDarkMode ? assets.sun_icon : assets.moon_icon} alt="Dark Mode Toggle" width={30} height={30} />
-                </button>
+                <ThemeToggle/>
 
                 <a href='#contact' className='hidden lg:flex items-center gap-3 px-10 py-2.5 border
                  border-gray-500 rounded-full nl-4'> 
