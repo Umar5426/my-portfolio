@@ -11,7 +11,7 @@ const Header = () => {
                 <Image src={assets.profile_img} alt="profile image" className="rounded-full w-32" />
             </div>
             <div>
-                <h3 className="text-xl md:text-2xl mb-3 font-Ovo">
+                <h3 className={`text-xl md:text-2xl mb-3 `}>
                     Hi, I'm Umar Khan
                     <Image src={assets.hand_icon} alt="hand icon" className="rounded-full w-6 inline-block ml-2" />
                 </h3>
@@ -22,11 +22,11 @@ const Header = () => {
             </div>
         </div>
 
-        <h1 className='text-3xl sm:text-6xl lg:text- [66px] font-Ovo'>
+        <h1 className='text-3xl sm:text-6xl lg:text- [66px] font-Outfit'>
             Full-Stack Software Engineer
         </h1>
 
-        <p className='max-w-2xl mx-auto font-Ovo'>
+        <p className='max-w-2xl mx-auto font-Outfit'>
         I'm a full-stack software engineer with a strong focus on React and modern web development. I have experience working across the stack, building scalable and efficient applications. I'm knowledgeable in both front-end and back-end development, with hands-on experience in various frameworks, languages, and database technologies. I also focus on authentication and security, ensuring applications are well-protected.
         </p>
 

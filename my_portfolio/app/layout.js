@@ -1,27 +1,33 @@
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
+import ThemeProvider from "./theme/theme-provider";
 
-const outfit = Outfit({
+export const outfit = Outfit({
   subsets: ["latin"], weight: ["400", "500", "600", "700"]
 });
 
-const ovo = Ovo({
+export const ovo = Ovo({
   subsets: ["latin"], weight: ["400"]
 });
 
-
 export const metadata = {
-  title: "Umar's Porfolio",
+  title: "Umar's Portfolio",
   description: "This is a portfolio website outlining Muhammed Umar Khan's projects and resumes",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body
-        className={`${outfit.class} ${ovo.class} antialiased leading-8 overflow-x-hidden`}
-      >
-        {children}
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
+    <body style={{fontFamily: `${outfit.style.fontFamily}, ${ovo.style.fontFamily}`}}
+    className="antialiased leading-8 overflow-x-hidden dark:bg-[#11001f] dark:text-white">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
