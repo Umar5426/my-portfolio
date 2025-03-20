@@ -50,9 +50,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
             </ul>
             
             <div className='flex items-center gap-4'>
-                {/* Theme Toggle 
-                <ThemeToggle/>
-                */}
+            <ThemeToggle/>
                 
                 <a href='#contact' className='hidden lg:flex items-center gap-3 px-10 py-2.5 border
                  border-gray-500 rounded-full nl-4 font-Ovo dark:border-white/50 dark:text-white'> 
