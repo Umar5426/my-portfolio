@@ -16,7 +16,7 @@ const Header = (isDarkMode) => {
                     <Image src={assets.hand_icon} alt="hand icon" className="rounded-full w-6 inline-block ml-2" />
                 </h3>
                 <h1 className="flex items-center gap-2">
-                    <Image src={assets.location_icon} alt="location icon" className="rounded-full w-6" />
+                    <Image src={isDarkMode? assets.location_icon_dark : assets.location_icon} alt="location icon" className="rounded-full w-6" />
                     Calgary, AB
                 </h1>
             </div>
