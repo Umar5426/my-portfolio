@@ -44,8 +44,8 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
             ${isScroll ? "":" bg-white/50 shadow-sx bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"}`}>
                 <li><a href="#top">Home</a></li>
                 <li><a href="#about">About me</a></li>
-                <li><a href="#services">Services</a></li>
                 <li><a href="#work">My Work</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact Me</a></li>
             </ul>
             
@@ -71,7 +71,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
             bottom-0 z-50 h-screen bg-rose-50 transition duration-300 dark:bg-[#3a1a4d] dark:text-white'>
 
                 <div style={{ position: 'absolute', top: 10, right: 10 }} onClick={closeMenu}>
-                    <Image src={assets.close_black} alt='' className='cursor-pointer' width={20}/>
+                    <Image src={isDarkMode ? assets.close_white : assets.close_black} alt='' className='cursor-pointer' width={20}/>
                 </div>
 
                 <li><a onClick={closeMenu} href="#top">Home</a></li>

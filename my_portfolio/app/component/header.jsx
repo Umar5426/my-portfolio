@@ -35,7 +35,7 @@ const Header = (isDarkMode) => {
                 Contact Me
                 <Image src={isDarkMode ? assets.right_arrow_bold : assets.right_arrow_white} alt="white right arrow" className="rounded-full w-4" />
             </a>
-            <a href="/UmarKhanResume.pdf" download className="px-10 py-4 border rounded-full border-gray-500 flex items-center gap-2">
+            <a href="/UmarKhanResume.pdf" download className="px-10 py-4 border rounded-full border-gray-500 flex items-center gap-2 dark:bg-white dark:text-black">
                 My Resumé
                 <Image src={assets.download_icon} alt="download button" className="rounded-50 w-4" />
             </a>

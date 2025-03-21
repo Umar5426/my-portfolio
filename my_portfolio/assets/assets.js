@@ -82,25 +82,23 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'Frontend project',
-        description: 'Web Design',
+        title: 'Texting App',
+        description: 'Next, Tailwind, MondgoDB',
         bgImage: '/work-1.png',
+        link: 'https://play-pong-w-ai.vercel.app',
     },
     {
-        title: 'Geo based app',
-        description: 'Mobile App',
+        title: 'PingPongw/Ai',
+        description: 'Node, JS, HTML, CSS',
         bgImage: '/work-2.png',
+        link: 'https://play-pong-w-ai.vercel.app',
     },
     {
-        title: 'Photography site',
-        description: 'Web Design',
+        title: 'E-commerce App',
+        description: 'React, CSS, Flask',
         bgImage: '/work-3.png',
-    },
-    {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
-        bgImage: '/work-4.png',
-    },
+        link: 'https://play-pong-w-ai.vercel.app',
+    }
 ]
 
 export const serviceData = [
