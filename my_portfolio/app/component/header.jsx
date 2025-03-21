@@ -2,7 +2,7 @@ import React from 'react';
 import { assets } from '@/assets/assets';
 import Image from 'next/image';
 
-const Header = () => {
+const Header = (isDarkMode) => {
   return (
     <div className='w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4 py-20'>
     
@@ -16,7 +16,7 @@ const Header = () => {
                     <Image src={assets.hand_icon} alt="hand icon" className="rounded-full w-6 inline-block ml-2" />
                 </h3>
                 <h1 className="flex items-center gap-2">
-                    <Image src={assets.location_icon} alt="location icon" className="rounded-full w-6" />
+                    <Image src={isDarkMode? assets.location_icon_dark : assets.location_icon} alt="location icon" className="rounded-full w-6" />
                     Calgary, AB
                 </h1>
             </div>
@@ -33,11 +33,11 @@ const Header = () => {
         <div className="gap-4 mt-4 flex items-center justify-center flex-row">
             <a href="contact" className="px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2">
                 Contact Me
-                <Image src={assets.right_arrow_white} alt="white right arrow" className="rounded-full w-4" />
+                <Image src={isDarkMode ? assets.right_arrow_bold : assets.right_arrow_white} alt="white right arrow" className="rounded-full w-4" />
             </a>
-            <a href="/UmarKhanResume.pdf" download className="px-10 py-4 border rounded-full border-gray-500 flex items-center gap-2">
+            <a href="/UmarKhanResume.pdf" download className="px-10 py-4 border rounded-full border-gray-500 flex items-center gap-2 dark:bg-white dark:text-black">
                 My Resumé
-                <Image src={assets.download_icon} alt="download button" className="rounded-full w-4" />
+                <Image src={assets.download_icon} alt="download button" className="rounded-50 w-4" />
             </a>
         </div>
 

@@ -36,6 +36,7 @@ import send_icon from './send-icon.png';
 import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import location_icon from './location_icon.png';
+import location_icon_dark from './location_icon_dark.png';
 
 export const assets = {
     user_image,
@@ -75,30 +76,29 @@ export const assets = {
     send_icon,
     right_arrow_bold,
     right_arrow_bold_dark,
-    location_icon
+    location_icon,
+    location_icon_dark
 };
 
 export const workData = [
     {
-        title: 'Frontend project',
-        description: 'Web Design',
+        title: 'Texting App',
+        description: 'Next, Tailwind, MondgoDB',
         bgImage: '/work-1.png',
+        link: 'https://play-pong-w-ai.vercel.app',
     },
     {
-        title: 'Geo based app',
-        description: 'Mobile App',
+        title: 'PingPongw/Ai',
+        description: 'Node, JS, HTML, CSS',
         bgImage: '/work-2.png',
+        link: 'https://play-pong-w-ai.vercel.app',
     },
     {
-        title: 'Photography site',
-        description: 'Web Design',
+        title: 'E-commerce App',
+        description: 'React, CSS, Flask',
         bgImage: '/work-3.png',
-    },
-    {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
-        bgImage: '/work-4.png',
-    },
+        link: 'https://play-pong-w-ai.vercel.app',
+    }
 ]
 
 export const serviceData = [
