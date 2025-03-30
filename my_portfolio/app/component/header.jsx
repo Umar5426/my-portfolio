@@ -31,7 +31,7 @@ const Header = ({ isDarkMode }) => {
         </p>
 
         <div className="gap-4 mt-4 flex items-center justify-center flex-row">
-            <a href="contact" className="px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2">
+            <a href="#contact" className="px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2">
                 Contact Me
                 <Image src={isDarkMode ? assets.right_arrow_bold : assets.right_arrow_white} alt="white right arrow" className="rounded-full w-4" />
             </a>
