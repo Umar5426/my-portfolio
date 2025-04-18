@@ -11,8 +11,11 @@ export const ovo = Ovo({
 });
 
 export const metadata = {
-  title: "Umar's Portfolio",
+  title: "Portfolio",
   description: "This is a portfolio website outlining Muhammed Umar Khan's projects and resumes",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
