@@ -37,6 +37,10 @@ import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import location_icon from './location_icon.png';
 import location_icon_dark from './location_icon_dark.png';
+import github_logo_light from './github_logo_light.png';
+import github_logo_dark from './github_logo_dark.png';
+import linkedin_logo_light from './linkedin_logo_light.png';
+import linkedin_logo_dark from './linkedin_logo_dark.png';
 
 export const assets = {
     user_image,
@@ -77,7 +81,11 @@ export const assets = {
     right_arrow_bold,
     right_arrow_bold_dark,
     location_icon,
-    location_icon_dark
+    location_icon_dark,
+    github_logo_light,
+    github_logo_dark,
+    linkedin_logo_light,
+    linkedin_logo_dark
 };
 
 export const workData = [
