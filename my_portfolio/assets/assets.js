@@ -85,7 +85,7 @@ export const workData = [
         title: 'Texting App',
         description: 'Next, Tailwind, MondgoDB',
         bgImage: '/work-1.png',
-        link: 'https://play-pong-w-ai.vercel.app',
+        link: 'https://github.com/Umar5426/Comms.',
     },
     {
         title: 'PingPongw/Ai',
@@ -97,7 +97,7 @@ export const workData = [
         title: 'E-commerce App',
         description: 'React, CSS, Flask',
         bgImage: '/work-3.png',
-        link: 'https://play-pong-w-ai.vercel.app',
+        link: 'https://github.com/Umar5426/PastProjects/tree/main/Ecommerce%20Application%20Project%20-%20Full%20Stack',
     }
 ]
 
