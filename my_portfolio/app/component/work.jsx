@@ -2,7 +2,7 @@ import { assets, workData } from '@/assets/assets';
 import React from 'react';
 import Image from 'next/image';
 
-const Work = (isDarkMode) => {
+const Work = ({isDarkMode}) => {
   return (
     <div id="work" className="w-full px-[12%] py-10 scroll-mt-20">
       <h4 className="text-center text-lg mb-2">My Portfolio</h4>
