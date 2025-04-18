@@ -2,7 +2,7 @@ import { assets, infoList, toolsData } from '@/assets/assets';
 import React from 'react';
 import Image from 'next/image';
 
-const About = (isDarkMode) => {
+const About = ({isDarkMode}) => {
   return (
     <div id="about" className="w-full px-[12%] py-10 scroll-mt-20">
       <h4 className="text-center text-lg mb-2">Introduction</h4>
@@ -36,7 +36,7 @@ const About = (isDarkMode) => {
             <ul className='flex items-center gap-3 sm:gap-5'>
               {toolsData.map((tool, index) => (
                 <li className='flex items-center justify-center w-12 sm:w-14 aspect-square border
-                 border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500'
+                 border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500 dark:bg-purple-900 dark:hover:bg-purple-700'
                   key={index}>
                   <Image src={tool} alt='tool' className='w-5 sm:w-7'/>
                 </li>

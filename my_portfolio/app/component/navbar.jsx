@@ -51,7 +51,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                     <ThemeToggle />
                     
                     <a href='#contact' className='hidden lg:flex items-center gap-3 px-10 py-2.5 border
-                     border-gray-500 rounded-full nl-4 font-Ovo dark:border-white/50 dark:text-white'> 
+                     border-gray-500 rounded-full nl-4 font-Ovo hover:bg-rose-50 duration-500 cursor-pointer dark:hover:bg-purple-700'> 
                         Contact
                         <Image 
                             src={isDarkMode ? assets.arrow_icon_dark : assets.arrow_icon}

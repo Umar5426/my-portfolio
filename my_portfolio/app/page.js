@@ -14,7 +14,7 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true); // Ensures hydration happens only on the client
+    setMounted(true); 
   }, []);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function Home() {
     }
   }, [theme, systemTheme, mounted]);
 
-  if (!mounted) return null; // Prevents hydration mismatch by rendering nothing until mounted
+  if (!mounted) return null; 
 
   return (
     <>

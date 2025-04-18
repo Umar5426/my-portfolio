@@ -11,6 +11,15 @@ const Header = ({ isDarkMode }) => {
                 <Image src={assets.profile_img} alt="profile image" className="rounded-full w-32" />
             </div>
             <div>
+                <h1 className="flex items-center gap-2">
+                    <a href='https://github.com/Umar5426'>
+                        <Image src={isDarkMode ? assets.github_logo_dark : assets.github_logo_light} alt="location icon" className=" w-6" />
+                    </a>
+
+                    <a href='https://www.linkedin.com/in/muhammedumarkhan/'>
+                     <Image src={isDarkMode ? assets.linkedin_logo_dark : assets.linkedin_logo_light} alt="location icon" className=" w-6" />
+                    </a>
+                </h1>
                 <h3 className="text-xl md:text-2xl mb-3">
                     Hi, I'm Umar Khan
                     <Image src={assets.hand_icon} alt="hand icon" className="rounded-full w-6 inline-block ml-2" />
@@ -37,7 +46,7 @@ const Header = ({ isDarkMode }) => {
             </a>
             <a href="/UmarKhanResume.pdf" download className="px-10 py-4 border rounded-full border-gray-500 flex items-center gap-2 dark:bg-white dark:text-black">
                 My Resumé
-                <Image src={assets.download_icon} alt="download button" className="rounded-full w-4" />
+                <Image src={assets.download_icon} alt="download button" className=" w-4" />
             </a>
         </div>
 
