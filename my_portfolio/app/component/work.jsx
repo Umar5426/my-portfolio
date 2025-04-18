@@ -13,18 +13,18 @@ const Work = (isDarkMode) => {
         I have worked on, ranging from web development to data science.
       </p>
 
-      <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
+      <div className="grid gap-5 " style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
         {workData.map((project, index) => (
           <a
             key={index}
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
+            className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group border-[0.5px] border-gray-700"
             style={{ backgroundImage: `url(${project.bgImage})` }}
           >
             <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 
-                flex items-center justify-between duration-500 group-hover:bottom-7">
+                flex items-center justify-between duration-500 group-hover:bottom-7 border-[0.5px] border-gray-700">
               <div>
                 <h2 className="font-semibold text-black">{project.title}</h2>
                 <p className="text-sm text-gray-700">{project.description}</p>
@@ -37,6 +37,7 @@ const Work = (isDarkMode) => {
         ))}
       </div>
 
+{/* 
       <a
         href=""
         className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px]
@@ -44,6 +45,7 @@ const Work = (isDarkMode) => {
       >
         Show more <Image src={assets.right_arrow_bold} alt="Right arrow" className="w-4" />
       </a>
+*/}
     </div>
   );
 };
