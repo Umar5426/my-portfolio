@@ -89,25 +89,68 @@ export const assets = {
 };
 
 export const workData = [
-    {
-        title: 'Texting App',
-        description: 'Next, Tailwind, MondgoDB',
-        bgImage: '/work-1.png',
-        link: 'https://github.com/Umar5426/Comms.',
-    },
-    {
-        title: 'PingPongw/Ai',
-        description: 'Node, JS, HTML, CSS',
-        bgImage: '/work-2.png',
-        link: 'https://play-pong-w-ai.vercel.app',
-    },
-    {
-        title: 'E-commerce App',
-        description: 'React, CSS, Flask',
-        bgImage: '/work-3.png',
-        link: 'https://github.com/Umar5426/PastProjects/tree/main/Ecommerce%20Application%20Project%20-%20Full%20Stack',
-    }
-]
+  {
+    title: "Texting App",
+    description:
+      "A full-stack real-time chat web and mobile app with AI-enhanced UX and secure authentication.",
+    tools: ["Next.js", "Tailwind CSS", "MongoDB", "WebSockets", "Node.js"],
+    company: "Personal Project",
+    category: "Full-Stack",
+    bgImage: "/work-1.png",
+    link: "https://github.com/Umar5426/Comms.",
+  },
+  {
+    title: "PingPong w/ AI",
+    description:
+      "A browser-based ping-pong game that uses AI to dynamically adjust difficulty and predict player movement.",
+    tools: ["Node.js", "JavaScript", "HTML", "CSS"],
+    company: "Personal Project",
+    category: "AI/ML",
+    bgImage: "/work-2.png",
+    link: "https://play-pong-w-ai.vercel.app/",
+  },
+  {
+    title: "E-Commerce Platform",
+    description:
+      "A responsive full-stack e-commerce application featuring secure payments, dynamic routing, and product management.",
+    tools: ["React", "Flask", "MongoDB", "CSS"],
+    company: "Personal Project",
+    category: "Full-Stack",
+    bgImage: "/work-3.png",
+    link: "https://github.com/Umar5426/PastProjects/tree/main/Ecommerce%20Application%20Project%20-%20Full%20Stack",
+  },
+  {
+    title: "AI Resume Analyzer",
+    description:
+      "An AI-powered resume scoring system using NLP to evaluate resumes and provide actionable insights.",
+    tools: ["Python", "Flask", "OpenAI API", "React"],
+    company: "Personal Project",
+    category: "AI/ML",
+    bgImage: "/work-4.png",
+    link: "https://github.com/Umar5426",
+  },
+  {
+    title: "Shahid Subscription Revamp",
+    description:
+      "Enhanced UX flows and added new subscription tiers for MBC Shahid’s streaming platform.",
+    tools: ["Next.js", "React", "Tailwind CSS", "UX Research"],
+    company: "MBC Shahid (UAE)",
+    category: "Full-Stack",
+    bgImage: "/work-5.png",
+    link: "https://shahid.mbc.net/",
+  },
+  {
+    title: "AI Email Summarizer",
+    description:
+      "Automates email summarization using GPT-based NLP models integrated into a Node backend.",
+    tools: ["Python", "Node.js", "OpenAI API", "Tailwind CSS"],
+    company: "Personal Project",
+    category: "AI/ML",
+    bgImage: "/work-6.png",
+    link: "https://github.com/Umar5426",
+  },
+];
+
 
 export const serviceData = [
     { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
