@@ -120,7 +120,7 @@ export default function Home() {
                 Interested in e-vouchers for your business? Checker&apos;s sales department can
                 share more and help you get started.
               </p>
-              <a className="button button-lime" href={`tel:${checker.salesPhone}`}>
+              <a className="button button-gold" href={`tel:${checker.salesPhone}`}>
                 Talk to Checker Sales <ArrowUpRight />
               </a>
               <div className="sales-detail">

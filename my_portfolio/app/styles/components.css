@@ -5,7 +5,8 @@
     z-index: 20;
     background: var(--header);
     backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--line);
+    border-bottom: 0;
+    box-shadow: 0 1px 0 #ad7d7d12;
   }
   .nav-inner {
     height: 94px;
@@ -27,9 +28,9 @@
     display: grid;
     place-content: center;
     position: relative;
-    background: var(--ink);
-    color: var(--page);
-    border-radius: 10px;
+    background: #684082;
+    color: #fff4e5;
+    border-radius: 50%;
     font-size: 21px;
     font-weight: 500;
     letter-spacing: -0.07em;
@@ -38,7 +39,7 @@
     position: absolute;
     bottom: 4px;
     right: 6px;
-    color: #c9d96c;
+    color: #f4d363;
   }
   .wordmark-caption {
     display: block;
@@ -92,6 +93,8 @@
     align-items: center;
     gap: 65px;
     padding-block: 85px 95px;
+    position: relative;
+    isolation: isolate;
   }
   .hero h1 {
     margin-top: 25px;
@@ -100,14 +103,14 @@
     line-height: 1.015;
   }
   .hero h1 em {
-    color: var(--muted);
+    color: var(--purple);
     letter-spacing: -0.06em;
   }
   .hero-period {
     font-family: Arial, sans-serif;
     font-size: 0.7em;
     font-style: normal;
-    color: #83934c;
+    color: var(--red);
     padding-left: 15px;
   }
   .hero-description {
@@ -152,7 +155,7 @@
   .portrait-frame {
     position: relative;
     aspect-ratio: 0.82;
-    border-radius: 12px;
+    border-radius: 48% 48% 42% 42% / 40% 40% 50% 50%;
     overflow: hidden;
     background: #b8a493;
   }
@@ -163,20 +166,21 @@
   .portrait-shade {
     position: absolute;
     inset: 65% 0 0;
-    background: linear-gradient(transparent, #161b1bb8);
+    background: linear-gradient(transparent, #3c244477);
   }
   .portrait-caption {
     position: absolute;
-    bottom: 24px;
-    left: 22px;
-    right: 22px;
+    bottom: 78px;
+    left: 15%;
+    right: 15%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 10px;
     color: #fff;
     font-family: "Courier New", monospace;
     font-size: 9px;
     letter-spacing: 0.06em;
+    flex-wrap: wrap;
   }
   .current-role {
     display: flex;
@@ -187,10 +191,10 @@
     left: -27px;
     right: 35px;
     padding: 22px;
-    background: var(--paper);
+    background: var(--page);
     border: 1px solid var(--line);
-    border-radius: 9px;
-    box-shadow: 0 14px 24px #00000008;
+    border-radius: 100px;
+    box-shadow: 0 16px 45px #68408212;
   }
   .role-symbol {
     width: 47px;
@@ -198,9 +202,10 @@
     display: grid;
     place-content: center;
     font-size: 30px;
-    background: #dfe9a3;
-    color: #3c4823;
-    border-radius: 7px;
+    background: #f4d363;
+    color: #684082;
+    border-radius: 50%;
+    flex-shrink: 0;
   }
   .current-role div {
     display: flex;
@@ -234,8 +239,9 @@
     color: var(--muted);
   }
   .focus-strip {
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    border-top: 0;
+    border-bottom: 0;
+    background: linear-gradient(90deg, transparent, var(--paper), transparent);
   }
   .focus-inner {
     display: flex;
@@ -249,7 +255,7 @@
     color: var(--muted);
   }
   .strip-star {
-    color: #788b3f;
+    color: var(--gold);
     font-size: 24px;
     line-height: 1;
   }
@@ -270,12 +276,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
-    border-radius: 12px;
-    background: #252c25;
-    color: #f4f5eb;
+    border-radius: 54px 100px 54px 100px;
+    background:
+      radial-gradient(ellipse at 100% 0, #89507999, transparent 65%),
+      linear-gradient(135deg, #4d2856, #321b41);
+    color: #fff2e4;
   }
   .featured-copy {
-    padding: 42px 43px;
+    padding: 42px 48px;
   }
   .project-topline {
     display: flex;
@@ -286,19 +294,19 @@
   .project-number {
     font-family: "Courier New", monospace;
     font-size: 12px;
-    color: #b6c0ae;
+    color: #d2b7cd;
   }
   .pill {
     font-family: "Courier New", monospace;
     font-size: 8px;
     letter-spacing: 0.06em;
     padding: 6px 10px;
-    border: 1px solid #64705b;
+    border: 1px solid #b48d9e;
     border-radius: 100px;
-    color: #c2cdb7;
+    color: #ead5dd;
   }
   .featured-copy > .small-label {
-    color: #bac5ad;
+    color: #e3c3ce;
     font-size: 9px;
   }
   .featured-copy h3 {
@@ -306,16 +314,16 @@
     margin-block: 15px 22px;
   }
   .accent-dot {
-    color: #e3ef93;
+    color: #f4d363;
   }
   .featured-copy p {
     font-size: 14px;
     line-height: 1.8;
     max-width: 375px;
-    color: #d0d7c9;
+    color: #f0dbdf;
   }
   .featured-copy p.featured-secondary {
-    color: #abb7a4;
+    color: #d9bbd2;
     font-size: 12px;
     margin-top: 16px;
   }
@@ -328,7 +336,7 @@
     align-items: center;
     gap: 12px;
     font-size: 10px;
-    color: #c2cbb8;
+    color: #ead3dd;
     margin-top: 16px;
   }
   .sales-detail a {
@@ -348,25 +356,25 @@
     display: grid;
     place-items: center;
     min-height: 560px;
-    background: #323d2c;
+    background: transparent;
     overflow: hidden;
     isolation: isolate;
   }
   .scene-grid {
     position: absolute;
     inset: 0;
-    opacity: 0.18;
+    opacity: 0.8;
     z-index: -1;
     background-image:
-      linear-gradient(#a1b28b22 1px, transparent 1px),
-      linear-gradient(90deg, #a1b28b22 1px, transparent 1px);
-    background-size: 40px 40px;
+      radial-gradient(ellipse at 80% 75%, #c44c6355, transparent 60%),
+      radial-gradient(ellipse at 30% 30%, #b688dd33, transparent 55%);
+    background-size: auto;
   }
   .scene-index,
   .scene-caption {
     position: absolute;
-    left: 28px;
-    color: #b2bda5;
+    left: 38px;
+    color: #ead1e1;
     font-size: 8px;
     font-family: "Courier New", monospace;
     letter-spacing: 0.07em;
@@ -383,18 +391,18 @@
     width: 70%;
     max-width: 360px;
     padding: 28px;
-    background: #e5edaa;
-    border-radius: 12px;
-    color: #2d3523;
+    background: linear-gradient(135deg, #fae6a0, #edc34d);
+    border-radius: 28px;
+    color: #4a294a;
     transform: rotate(-9deg);
-    box-shadow: 0 24px 45px #10180d55;
+    box-shadow: 0 24px 60px #1e0d2f55;
     z-index: 1;
   }
   .voucher-card-back {
     position: absolute;
     height: 290px;
     transform: rotate(8deg) translate(7px, 9px);
-    background: #75845e;
+    background: #ac748e;
     z-index: 0;
     box-shadow: none;
   }
@@ -410,7 +418,7 @@
   .checker-pattern {
     width: 30px;
     height: 30px;
-    background: conic-gradient(#303b26 25%, transparent 0 50%, #303b26 0 75%, transparent 0);
+    background: conic-gradient(#684082 25%, transparent 0 50%, #684082 0 75%, transparent 0);
     background-size: 15px 15px;
   }
   .voucher-arrow {
@@ -425,7 +433,7 @@
     letter-spacing: -0.045em;
   }
   .voucher-divider {
-    border-top: 1px dashed #75815488;
+    border-top: 1px dashed #9b653f88;
     margin-bottom: 17px;
   }
   .voucher-bottom {
@@ -440,9 +448,9 @@
     height: 23px;
     background: repeating-linear-gradient(
       90deg,
-      #465333 0 2px,
+      #694b67 0 2px,
       transparent 2px 5px,
-      #465333 5px 6px,
+      #694b67 5px 6px,
       transparent 6px 9px
     );
   }
@@ -450,7 +458,7 @@
     position: absolute;
     width: 420px;
     height: 420px;
-    border: 1px solid #b3c59c20;
+    border: 1px solid #e4c79035;
     border-radius: 50%;
     z-index: -1;
   }
@@ -466,23 +474,24 @@
     align-items: center;
     padding: 42px 36px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 44px 72px 44px 72px;
     aspect-ratio: 1.5;
   }
   .project-image.comms {
-    background: #e7e9ee;
+    background: radial-gradient(ellipse at 10% 90%, #d8b9df, transparent 75%), #eadfed;
   }
   .project-image.pong {
-    background: #e5e8db;
+    background: radial-gradient(ellipse at 90% 10%, #e9ba79, transparent 75%), #f1e3c9;
   }
   .project-browser {
     width: 100%;
     border: 1px solid #c0c7ce;
-    border-radius: 8px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 12px 25px #202b3622;
+    box-shadow: 0 16px 35px #6840821c;
     transform: rotate(-2deg);
     transition: transform 0.3s;
+    border-color: #d3bbc5;
   }
   .pong .project-browser {
     transform: rotate(2deg);
@@ -492,19 +501,19 @@
   }
   .browser-bar {
     height: 22px;
-    background: #f7f8f8;
+    background: #fff8ee;
     display: flex;
     align-items: center;
     gap: 4px;
     padding: 0 8px;
-    color: #63716e;
+    color: #79636d;
     font-size: 7px;
   }
   .browser-bar i {
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background: #c9d0ce;
+    background: #c9a4ba;
   }
   .browser-bar span {
     margin: auto;
@@ -513,7 +522,7 @@
   .project-screenshot {
     position: relative;
     aspect-ratio: 1.7;
-    background: #20241e;
+    background: #3c2444;
   }
   .project-screenshot img {
     object-fit: cover;
@@ -526,8 +535,8 @@
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    background: #f8f8f2;
-    color: #272b25;
+    background: #fff5e8;
+    color: #b52e43;
     display: grid;
     place-content: center;
   }
@@ -564,9 +573,9 @@
   }
   .tags li {
     font-size: 9px;
-    padding: 4px 9px;
+    padding: 5px 12px;
     border: 1px solid var(--line);
-    border-radius: 4px;
+    border-radius: 100px;
     color: var(--muted);
   }
   .all-projects {
@@ -575,7 +584,7 @@
     justify-content: space-between;
     padding: 24px 0;
     border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    border-bottom: 0;
     margin-top: 48px;
     font-size: 13px;
   }
@@ -583,7 +592,9 @@
     color: var(--muted);
   }
   .experience-section {
-    background: var(--paper);
+    background: linear-gradient(160deg, var(--paper), var(--page));
+    border-radius: 90px 24px 90px 24px;
+    margin-inline: 16px;
   }
   .experience-section h2 {
     font-size: clamp(42px, 4.8vw, 65px);
@@ -654,7 +665,7 @@
     font-style: italic;
   }
   .about-signature span {
-    color: #7b8f41;
+    color: var(--red);
     font-family: Arial, sans-serif;
     font-size: 32px;
     margin-left: 24px;
@@ -696,9 +707,13 @@
     line-height: 1.8;
   }
   .contact-section {
-    background: #e2eaa7;
-    color: #2b3423;
+    background:
+      radial-gradient(ellipse at 100% 0, #e6b64d99, transparent 65%),
+      linear-gradient(135deg, #f5dfb8, #f5d574);
+    color: #4b2847;
     padding-block: 58px 48px;
+    border-radius: 100px 28px 100px 28px;
+    margin-inline: 16px;
   }
   .contact-top {
     display: flex;
@@ -707,7 +722,7 @@
     font-family: "Courier New", monospace;
     font-size: 9px;
     letter-spacing: 0.06em;
-    color: #556144;
+    color: #6e455e;
   }
   .contact-top .section-kicker {
     margin: 0;
@@ -724,18 +739,20 @@
     font-size: clamp(60px, 7vw, 96px);
   }
   .contact-heading h2 em {
-    color: #5b6747;
+    color: #754c87;
   }
   .contact-arrow {
     width: 108px;
     height: 108px;
-    border: 1px solid #a9b779;
+    border: 1px solid #b38057;
     border-radius: 50%;
     display: grid;
     place-content: center;
     transition:
       transform 0.2s,
       background 0.2s;
+    background: #b52e43;
+    color: #fff7ef;
   }
   .contact-arrow svg {
     width: 48px;
@@ -743,10 +760,10 @@
   }
   .contact-arrow:hover {
     transform: rotate(45deg);
-    background: #cbd88e;
+    background: #684082;
   }
   .contact-bottom {
-    border-top: 1px solid #bac78c;
+    border-top: 1px solid #bd8f5d66;
     padding-top: 27px;
     display: flex;
     justify-content: space-between;
@@ -762,13 +779,13 @@
   }
   .contact-bottom p {
     font-size: 11px;
-    color: #536044;
+    color: #6e455e;
   }
   .contact-bottom p a {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    border-bottom: 1px solid #a0b073;
+    border-bottom: 1px solid #9c5264;
   }
   .contact-bottom p svg {
     width: 12px;
@@ -806,5 +823,17 @@
   .site-footer :where(svg) {
     width: 12px;
     height: 12px;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: -20px -20px 0;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 50%;
+    mask-image: radial-gradient(ellipse, #000 35%, transparent 75%);
+    background:
+      radial-gradient(ellipse at 10% 65%, var(--rose-glow), transparent 65%),
+      radial-gradient(ellipse at 90% 35%, var(--gold-glow), transparent 55%);
   }
 }
