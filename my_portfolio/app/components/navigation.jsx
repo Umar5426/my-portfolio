@@ -73,7 +73,7 @@ export default function Navigation() {
             uk<span>.</span>
           </span>
           <span>
-            Umar Khan<span className="wordmark-caption">Systems & software</span>
+            Umar Khan<span className="wordmark-caption">An engineer's collection</span>
           </span>
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">

@@ -2,7 +2,9 @@
 
 Personal portfolio for Umar Khan, IT Systems Manager at Checker Cabs in Calgary.
 
-The site features e-vouchers, created for Checker Cabs, alongside selected software projects and previous experience at MBC Shahid and Al Arabiya News Channel. E-vouchers enquiries go to Checker Sales. The voucher graphic is an illustration, not a product screenshot or a redeemable voucher.
+The site presents Umar's work at Checker Cabs, Tartigrade Inc., MBC Shahid and Al Arabiya News Channel, alongside technical leadership at MCC Downtown Centre and an employee management project. E-vouchers enquiries go to Checker Sales. Project graphics are decorative illustrations, not product screenshots or redeemable vouchers.
+
+The design takes its cues from a cozy, collected study: ivory, oxblood, forest green, aubergine, ochre, brass, framed photography and textile patterns. Light and dark themes are available. Fonts are self-hosted; no API keys or external font requests are needed.
 
 ## Development
 
@@ -29,12 +31,14 @@ Before publishing, check desktop and mobile layouts, the mobile menu (including 
 
 ## Content
 
-- `my_portfolio/lib/portfolio.js`: employer, title, contact details, experience and selected projects.
+- `my_portfolio/lib/portfolio.js`: employer, title, contact details, experience, leadership, education, skills and selected projects.
 - `my_portfolio/app/page.js`: page sections and e-vouchers feature.
 - `my_portfolio/app/styles/`: design, responsive layout and both themes.
 - `my_portfolio/public/social-card.svg`: sharing artwork; regenerate its PNG after changes.
+- `my_portfolio/public/UmarKhanResume.pdf`: current downloadable public résumé.
+- `my_portfolio/docs/art-direction.md`: decorative image provenance, final generation prompt and font licenses.
 
-Checker Sales' public number, 403-974-1156, was verified on the official Checker Group website on October 21, 2026. Current role and e-vouchers attribution were supplied by Umar. Earlier experience is based on the repository's existing resume. No usage, revenue or performance metrics are claimed.
+Career titles, dates, education and skills reflect the résumé Umar supplied on October 21, 2026. The claim of over 30 hours saved each week at Checker is supplied by Umar. E-vouchers attribution and sales routing were also supplied by Umar. Checker Sales' public number, 403-974-1156, was verified on the official Checker Group website on October 21, 2026. Tender headers, page footers and the proposed WAV assignment are omitted from the public career history. No extra product capabilities, certifications, customer details or performance figures are inferred.
 
 ## Deployment
 

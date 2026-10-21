@@ -1,11 +1,27 @@
+import localFont from "next/font/local";
 import Script from "next/script";
 import "./globals.css";
 
+const editorial = localFont({
+  src: [
+    { path: "./fonts/cormorant-garamond.woff2", weight: "300 700", style: "normal" },
+    { path: "./fonts/cormorant-garamond-italic.woff2", weight: "300 700", style: "italic" },
+  ],
+  variable: "--font-editorial",
+  display: "swap",
+});
+const sans = localFont({
+  src: "./fonts/dm-sans.woff2",
+  weight: "100 1000",
+  variable: "--font-sans",
+  display: "swap",
+});
+
 export const metadata = {
   metadataBase: new URL("https://umars-portfolio-one.vercel.app"),
-  title: "Umar Khan — IT Systems Manager & Software Developer",
+  title: "Umar Khan — IT Systems Manager & Software Engineer",
   description:
-    "Umar Khan is the IT Systems Manager at Checker Cabs in Calgary and the creator of e-vouchers. Explore his experience, software projects and product work.",
+    "Umar Khan, IT Systems Manager at Checker Cabs and University of Calgary software engineering graduate. A collection of work in systems, software architecture, product and technical leadership.",
   authors: [{ name: "Muhammed Umar Khan" }],
   alternates: { canonical: "/" },
   openGraph: {
@@ -30,7 +46,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
-      <body>
+      <body className={`${editorial.variable} ${sans.variable}`}>
         <Script
           id="portfolio-theme"
           strategy="beforeInteractive"
