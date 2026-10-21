@@ -37,11 +37,11 @@ export function SystemsVisual() {
   return (
     <div className="systems-visual" aria-hidden="true">
       <svg viewBox="0 0 420 70" fill="none" aria-hidden="true">
-        <path d="M60 35h300" className="system-line" />
-        <path d="M60 35h300" className="system-flow" />
-        <circle cx="60" cy="35" r="8" />
+        <path d="M70 35h280" className="system-line" />
+        <path d="M70 35h280" className="system-flow" />
+        <circle cx="70" cy="35" r="8" />
         <circle cx="210" cy="35" r="8" />
-        <circle cx="360" cy="35" r="8" />
+        <circle cx="350" cy="35" r="8" />
       </svg>
       <div className="system-labels">
         <span>Systems</span>

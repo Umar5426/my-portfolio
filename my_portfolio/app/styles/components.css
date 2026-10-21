@@ -221,7 +221,7 @@
   }
   .systems-visual :where(svg) {
     width: 100%;
-    height: 55px;
+    height: auto;
     overflow: visible;
   }
   .system-line {
@@ -239,12 +239,12 @@
     stroke-width: 1.5;
   }
   .system-labels {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
     color: var(--muted);
     font-size: 9px;
-    padding-inline: 7%;
-    margin-top: -6px;
+    margin-top: -12px;
   }
   .expertise-section {
     background: var(--paper);
