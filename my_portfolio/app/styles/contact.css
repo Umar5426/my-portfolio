@@ -1,0 +1,110 @@
+@layer components {
+  .contact-section {
+    color: #f8edda;
+    background: repeating-linear-gradient(90deg, #ffffff03 0 22px, transparent 22px 44px), #374c3c;
+    border-top: 7px double #b5ae84;
+    padding-block: 70px;
+  }
+  .contact-inner > .eyebrow {
+    color: #d6d6b4;
+  }
+  .contact-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-block: 30px 40px;
+  }
+  .contact-heading :where(h2) {
+    font-size: clamp(50px, 5.7vw, 80px);
+  }
+  .contact-heading :where(h2) :where(em) {
+    color: #e6bb55;
+  }
+  .contact-arrow {
+    display: grid;
+    place-content: center;
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    border: 1px solid #c1ab6b;
+    border-radius: 50%;
+    outline: 1px solid #c1ab6b;
+    outline-offset: 5px;
+    transition: transform 0.2s;
+  }
+  .contact-arrow:hover {
+    transform: rotate(10deg);
+  }
+  .contact-arrow :where(svg) {
+    width: 45px;
+    height: 45px;
+  }
+  .contact-bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 35px;
+    border-top: 1px solid #7c8b6c;
+    padding-top: 27px;
+  }
+  .email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 19px;
+  }
+  .contact-bottom :where(p) {
+    color: #e0ddc5;
+    font-size: 11px;
+  }
+  .contact-bottom :where(p) :where(a) {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    margin-top: 4px;
+    color: #f1d49b;
+  }
+  .contact-bottom :where(p) :where(a) :where(svg) {
+    width: 13px;
+    height: 13px;
+  }
+  .site-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-block: 32px;
+  }
+  .footer-name {
+    font-family: var(--font-editorial), Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+  }
+  .footer-name :where(span) {
+    display: block;
+    font-family: var(--font-sans), sans-serif;
+    color: var(--muted);
+    font-size: 7px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    margin-top: 9px;
+  }
+  .site-footer > div {
+    display: flex;
+    gap: 25px;
+    font-size: 10px;
+  }
+  .site-footer > div :where(a) {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .site-footer :where(svg) {
+    width: 13px;
+    height: 13px;
+  }
+}

@@ -1,350 +1,914 @@
 @layer responsive {
   @media (min-width: 1600px) {
     .hero {
-      padding-block: 110px 120px;
+      padding-top: 65px;
+      padding-bottom: 85px;
     }
   }
   @media (max-width: 1100px) {
     .container {
-      width: calc(100% - 64px);
+      width: calc(100% - 72px);
+    }
+    .desktop-nav {
+      gap: 24px;
     }
     .hero {
-      gap: 35px;
+      gap: 3%;
+      min-height: 650px;
     }
-    .hero h1 {
-      font-size: clamp(62px, 7.2vw, 80px);
+    .hero :where(h1) {
+      font-size: 78px;
     }
-    .hero-links {
-      gap: 20px;
-      flex-wrap: wrap;
+    .hero-copy > .eyebrow {
+      font-size: 8px;
     }
-    .hero-description {
+    .hero-gallery {
+      height: 510px;
+    }
+    .portrait-frame {
+      left: 8%;
+      width: 70%;
+      padding: 10px 10px 0;
+    }
+    .portrait-mat {
+      height: 270px;
+    }
+    .interior-frame {
+      width: 75%;
+      height: 210px;
+    }
+    .gallery-seal {
+      width: 112px;
+      height: 112px;
+      left: -6px;
+      bottom: 48px;
+    }
+    .gallery-seal :where(svg) {
+      width: 112px;
+      height: 112px;
+    }
+    .gallery-seal :where(span) {
+      font-size: 8px;
+    }
+    .gallery-seal :where(em) {
       font-size: 14px;
     }
-    .current-role {
-      left: -15px;
-      right: 5px;
-      padding: 18px;
+    .gallery-caption {
+      font-size: 6px;
+    }
+    .hero-links {
+      gap: 18px;
+    }
+    .button {
+      gap: 14px;
+      padding-inline: 18px;
+    }
+    .ribbon :where(span) {
+      font-size: 22px;
     }
     .featured-copy {
-      padding: 32px 28px;
-    }
-    .voucher-scene {
-      min-height: 410px;
+      padding: 32px;
     }
     .voucher-card {
-      width: 78%;
-      padding: 23px;
+      padding: 22px;
     }
-    .voucher-card-back {
-      height: 280px;
+    .project {
+      gap: 5%;
     }
-    .about-section {
-      gap: 50px;
+    .project-art {
+      min-height: 345px;
     }
-    .contact-bottom {
+    .document-sheet {
+      height: 200px;
+      top: 50px;
+      padding: 15px;
+    }
+    .document-sheet-back {
+      top: 43px;
+      padding-top: 35px;
+    }
+    .artwork-flourish {
+      font-size: 23px;
+      right: 17px;
+      bottom: 40px;
+    }
+    .community-arch {
+      width: 57%;
+      left: 18%;
+      height: 250px;
+    }
+    .community-flower {
+      font-size: 88px;
+      right: 6%;
+    }
+    .dashboard-window {
+      width: 74%;
+      left: 10%;
+    }
+    .dashboard-seal {
+      width: 90px;
+      height: 90px;
+      font-size: 22px;
+    }
+    .impact-inner {
+      gap: 22px;
+      grid-template-columns: auto 1fr auto;
+    }
+    .impact-ornament {
+      display: none;
+    }
+    .impact-number {
+      font-size: 125px;
+    }
+    .impact-copy :where(h2) {
+      font-size: 38px;
+    }
+    .impact-aside {
+      font-size: 23px;
+    }
+    .about-inner {
+      gap: 8%;
+    }
+    .about-intro :where(h2) {
+      font-size: 58px;
+    }
+    .education-card {
+      padding: 25px;
+    }
+    .education-card :where(h3) {
+      font-size: 33px;
+    }
+    .contact-arrow {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  @media (max-width: 900px) {
+    .wordmark {
+      font-size: 23px;
+      gap: 10px;
+    }
+    .wordmark-caption {
+      font-size: 7px;
+    }
+    .monogram {
+      width: 43px;
+      height: 48px;
+    }
+    .nav-inner {
+      height: 85px;
+    }
+    .nav-actions {
+      gap: 14px;
+    }
+    .desktop-nav {
+      gap: 20px;
+      font-size: 11px;
+    }
+    .hero :where(h1) {
+      font-size: 65px;
+    }
+    .hero-prelude {
+      font-size: 19px;
+    }
+    .hero-description {
+      font-size: 13px;
+    }
+    .hero-links {
       align-items: flex-start;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
+    }
+    .hero-note {
+      margin-top: 25px;
+    }
+    .hero-gallery {
+      height: 460px;
+    }
+    .portrait-mat {
+      height: 230px;
+      border-width: 6px;
+    }
+    .portrait-frame {
+      border-width: 5px;
+    }
+    .portrait-frame :where(figcaption) {
+      font-size: 18px;
+    }
+    .interior-frame {
+      height: 185px;
+      bottom: 17px;
+    }
+    .interior-frame :where(figcaption) {
+      font-size: 17px;
+      left: 10px;
+    }
+    .gallery-seal {
+      left: -15px;
+      bottom: 45px;
+    }
+    .gallery-caption {
+      left: 1%;
+      bottom: -10px;
+    }
+    .ribbon :where(span) {
+      font-size: 19px;
+    }
+    .ribbon-inner {
+      gap: 10px;
+    }
+    .section {
+      padding-block: 85px;
+    }
+    .featured-copy {
+      padding: 28px;
+    }
+    .featured-copy :where(h3) {
+      font-size: 47px;
+    }
+    .featured-copy .eyebrow {
+      margin-bottom: 25px;
+    }
+    .voucher-title {
+      font-size: 37px;
+    }
+    .voucher-shadow {
+      height: 245px;
+    }
+    .project-art {
+      min-height: 320px;
+    }
+    .project-copy {
+      padding-inline: 0;
+    }
+    .project-copy :where(h3) {
+      font-size: 40px;
+    }
+    .document-sheet {
+      width: 46%;
+    }
+    .document-sheet-back {
+      left: 14%;
+    }
+    .artwork-flourish {
+      font-size: 20px;
+    }
+    .community-title {
+      font-size: 48px;
+    }
+    .art-label {
+      left: 20px;
+    }
+    .impact-aside {
+      display: none;
+    }
+    .impact-inner {
+      grid-template-columns: auto 1fr;
+      gap: 35px;
+    }
+    .experience-row {
+      grid-template-columns: 25% 1fr;
+      gap: 5%;
+    }
+    .experience-content :where(h3) {
+      font-size: 30px;
+    }
+    .experience-meta {
+      padding-left: 28px;
+      font-size: 10px;
+    }
+    .experience-index {
+      font-size: 23px;
+    }
+    .current-label {
+      font-size: 6px;
+      gap: 5px;
+    }
+    .about-inner {
+      gap: 5%;
+    }
+    .about-intro :where(h2) {
+      font-size: 50px;
+    }
+    .education-wrap {
+      padding-inline: 8px;
+    }
+    .education-card {
+      padding: 25px 22px;
+    }
+    .education-card :where(h3) {
+      font-size: 30px;
+    }
+    .education-specialization {
+      font-size: 22px;
+    }
+    .skills-section {
+      gap: 6%;
+    }
+    .skills-heading :where(h2) {
+      font-size: 50px;
+    }
+    .email-link {
+      font-size: 15px;
+    }
+    .site-footer > div {
+      gap: 17px;
     }
   }
   @media (max-width: 760px) {
     html {
-      scroll-padding-top: 85px;
+      scroll-padding-top: 95px;
     }
     .container {
-      width: calc(100% - 40px);
-    }
-    .section {
-      padding-block: 70px;
+      width: calc(100% - 44px);
     }
     .nav-inner {
-      height: 76px;
-    }
-    .wordmark {
-      font-size: 13px;
-    }
-    .monogram {
-      width: 37px;
-      height: 37px;
-      font-size: 19px;
-      border-radius: 50%;
-    }
-    .wordmark-caption {
-      font-size: 9px;
+      height: 80px;
     }
     .desktop-nav,
     .nav-contact {
       display: none;
     }
     .nav-actions {
-      gap: 14px;
+      gap: 8px;
     }
     .mobile-menu {
       display: block;
     }
-    .mobile-menu summary {
-      list-style: none;
+    .mobile-menu :where(summary) {
       display: flex;
+      align-items: center;
+      justify-content: center;
       flex-direction: column;
       gap: 6px;
-      padding: 12px 5px;
+      width: 40px;
+      height: 44px;
       cursor: pointer;
+      list-style: none;
     }
-    .mobile-menu summary::-webkit-details-marker {
+    .mobile-menu :where(summary)::-webkit-details-marker {
       display: none;
     }
-    .mobile-menu summary span {
-      display: block;
-      width: 22px;
+    .mobile-menu :where(summary) :where(span) {
+      width: 20px;
       height: 1px;
       background: var(--ink);
-      transition: transform 0.2s;
     }
-    .mobile-menu[open] summary span:first-child {
+    .mobile-menu:where([open]) :where(summary) :where(span:first-child) {
       transform: translateY(3.5px) rotate(45deg);
     }
-    .mobile-menu[open] summary span:last-child {
+    .mobile-menu:where([open]) :where(summary) :where(span:last-child) {
       transform: translateY(-3.5px) rotate(-45deg);
     }
     .mobile-menu nav {
       position: absolute;
-      top: 76px;
+      top: 79px;
       left: 0;
       right: 0;
+      background: var(--page);
+      border-bottom: 1px solid var(--gold);
+      box-shadow: 0 14px 22px #302e2610;
+      padding: 18px 28px 28px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      background: var(--page);
-      padding: 22px;
-      border-bottom: 1px solid var(--line);
-      box-shadow: 0 12px 24px #00000010;
-      border-radius: 0 0 32px 32px;
+      gap: 4px;
     }
-    .mobile-menu nav a {
-      padding: 12px;
-      font-size: 18px;
+    .mobile-menu nav :where(a) {
+      font-family: var(--font-editorial), Georgia, serif;
+      font-size: 28px;
+      padding-block: 7px;
+      border-bottom: 1px solid var(--line);
     }
     .hero {
       grid-template-columns: 1fr;
-      gap: 45px;
-      padding-block: 48px 72px;
+      gap: 46px;
+      padding-top: 40px;
+      padding-bottom: 53px;
     }
-    .hero h1 {
-      font-size: clamp(58px, 12vw, 88px);
+    .hero-copy {
+      padding-top: 0;
+    }
+    .hero-copy > .eyebrow {
+      font-size: 8px;
+      margin-bottom: 27px;
+    }
+    .hero-prelude {
+      font-size: 21px;
+      margin-bottom: 14px;
+    }
+    .hero :where(h1) {
+      font-size: clamp(61px, 11.7vw, 90px);
+      line-height: 0.95;
     }
     .hero-description {
-      max-width: 440px;
+      max-width: 470px;
       font-size: 14px;
-    }
-    .hero .eyebrow {
-      font-size: 9px;
+      margin-top: 23px;
     }
     .hero-links {
-      gap: 23px;
+      flex-direction: row;
+      align-items: center;
+      gap: 22px;
+      margin-top: 25px;
     }
-    .hero-links .text-link {
-      font-size: 12px;
+    .hero-note {
+      margin-top: 25px;
     }
-    .hero-footnote {
-      margin-top: 30px;
-    }
-    .hero-visual {
-      width: min(88%, 440px);
+    .hero-gallery {
+      height: 510px;
+      width: min(100%, 500px);
       margin-inline: auto;
-      padding-bottom: 22px;
+    }
+    .gallery-wall {
+      inset: 16px 0 10px 20px;
     }
     .portrait-frame {
-      aspect-ratio: 0.95;
-      border-radius: 48% 48% 42% 42% / 40% 40% 50% 50%;
+      width: 65%;
+      left: 9%;
+      padding: 12px 12px 0;
+      border-width: 6px;
     }
-    .portrait {
-      object-position: 50% 29%;
+    .portrait-mat {
+      height: 285px;
+      border-width: 8px;
     }
-    .current-role {
-      left: -16px;
-      right: 15px;
-      bottom: -17px;
+    .portrait-frame :where(figcaption) {
+      font-size: 21px;
     }
-    .current-role strong {
-      font-size: 17px;
+    .interior-frame {
+      width: 74%;
+      height: 223px;
+      right: 0;
+      bottom: 18px;
     }
-    .portrait-caption {
-      font-size: 8px;
-      bottom: 68px;
+    .interior-frame :where(figcaption) {
+      font-size: 20px;
     }
-    .focus-inner {
-      justify-content: center;
+    .gallery-seal {
+      left: 0;
+      bottom: 50px;
+      width: 118px;
+      height: 118px;
+    }
+    .gallery-seal :where(svg) {
+      width: 118px;
+      height: 118px;
+    }
+    .gallery-caption {
+      font-size: 6px;
+      left: 9%;
+      bottom: -14px;
+    }
+    .ribbon-inner {
       flex-wrap: wrap;
-      gap: 13px 16px;
-      padding-block: 18px;
-      font-size: 8px;
+      justify-content: center;
+      column-gap: 14px;
+      row-gap: 1px;
+      padding-block: 13px;
     }
-    .focus-inner > :where(span:last-child, span:nth-last-child(2)) {
+    .ribbon :where(span) {
+      font-size: 20px;
+    }
+    .ribbon :where(i) {
+      font-size: 15px;
+    }
+    .ribbon :where(span:last-child) {
+      flex-basis: 100%;
+      text-align: center;
+    }
+    .ribbon :where(i):nth-last-child(2) {
       display: none;
     }
-    .strip-star {
-      font-size: 18px;
+    .section {
+      padding-block: 70px;
+    }
+    :where(h2) {
+      font-size: clamp(46px, 8.5vw, 65px);
     }
     .section-heading {
       align-items: flex-start;
       flex-direction: column;
-      gap: 23px;
-      margin-bottom: 35px;
-    }
-    .section-heading > p {
-      font-size: 12px;
+      gap: 24px;
+      margin-bottom: 34px;
     }
     .section-kicker {
-      font-size: 9px;
       margin-bottom: 20px;
+    }
+    .section-heading > :where(p) {
+      font-size: 13px;
+    }
+    .desktop-break {
+      display: none;
     }
     .featured-project {
       grid-template-columns: 1fr;
-      border-radius: 38px 64px 38px 64px;
+      border-radius: 3px 54px 3px 3px;
     }
     .featured-copy {
-      padding: 32px 28px;
+      padding: 34px 28px;
     }
-    .project-topline {
-      margin-bottom: 35px;
+    .featured-copy :where(h3) {
+      font-size: 58px;
     }
-    .featured-copy h3 {
-      font-size: 46px;
-    }
-    .featured-copy p {
-      font-size: 13px;
+    .featured-copy > :where(p):not(.eyebrow):not(.project-name) {
+      font-size: 14px;
       max-width: none;
     }
+    .featured-copy .eyebrow {
+      margin-bottom: 26px;
+    }
+    .sales-detail {
+      font-size: 10px;
+      gap: 8px;
+    }
     .voucher-scene {
-      min-height: 410px;
+      min-height: 385px;
+      border-left: 0;
+      border-top: 7px double #68415f44;
     }
     .voucher-card {
-      max-width: 300px;
-      width: 72%;
-      padding: 23px;
+      width: 77%;
+      max-width: 370px;
+      padding: 25px;
     }
     .voucher-title {
-      font-size: 36px;
-      margin-block: 29px 24px;
+      font-size: 47px;
+      margin-block: 22px;
     }
-    .voucher-card-back {
-      height: 272px;
+    .voucher-shadow {
+      width: 77%;
+      max-width: 370px;
+      height: 255px;
     }
     .scene-index {
-      top: 22px;
+      top: 20px;
+      font-size: 7px;
       left: 20px;
+    }
+    .scene-corner {
+      font-size: 80px;
+      right: 16px;
+      bottom: 30px;
     }
     .scene-caption {
-      left: 20px;
-      font-size: 6px;
+      font-size: 5px;
     }
-    .project-grid {
+    .project-collection {
+      margin-top: 45px;
+      gap: 43px;
+    }
+    .project {
       grid-template-columns: 1fr;
-      gap: 38px;
-      margin-top: 35px;
+      gap: 27px;
     }
-    .project-image {
-      padding: 35px 28px;
+    .project-community :where(.project-art) {
+      order: 0;
     }
-    .project-heading h3 {
-      font-size: 28px;
+    .project-art {
+      min-height: 365px;
+    }
+    .project-copy {
+      padding-inline: 3px;
+    }
+    .project-copy :where(h3) {
+      font-size: 43px;
+      max-width: 430px;
+    }
+    .project-copy > :where(p):not(.eyebrow):not(.project-name) {
+      font-size: 14px;
+    }
+    .tags :where(li) {
+      font-size: 10px;
+    }
+    .document-sheet {
+      width: 41%;
+      height: 220px;
+      top: 55px;
+      padding: 20px;
+    }
+    .document-sheet-back {
+      left: 19%;
+      top: 42px;
+      padding-top: 40px;
+    }
+    .artwork-flourish {
+      font-size: 25px;
+    }
+    .community-arch {
+      width: 50%;
+      left: 23%;
+      height: 270px;
+    }
+    .community-title {
+      font-size: 53px;
+    }
+    .community-flower {
+      font-size: 107px;
+    }
+    .dashboard-window {
+      width: 67%;
+      left: 15%;
+    }
+    .dashboard-seal {
+      width: 106px;
+      height: 106px;
+      font-size: 25px;
     }
     .all-projects {
       font-size: 11px;
       margin-top: 35px;
-      gap: 15px;
     }
-    .experience-section h2 {
-      font-size: 43px;
+    .impact-inner {
+      gap: 16px;
+      padding-block: 35px;
+    }
+    .impact-number {
+      font-size: 102px;
+    }
+    .impact-number :where(span) {
+      font-size: 48px;
+    }
+    .impact-copy :where(h2) {
+      font-size: 31px;
+    }
+    .impact-copy :where(p) {
+      font-size: 10px;
+      margin-top: 10px;
     }
     .experience-row {
       grid-template-columns: 1fr;
-      gap: 16px;
-      padding-block: 28px;
+      gap: 19px;
+      padding-block: 29px;
     }
-    .experience-content h3 {
-      font-size: 24px;
-    }
-    .experience-location {
-      flex-direction: row;
+    .experience-meta {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 14px;
       align-items: center;
-      font-size: 10px;
+      padding-left: 32px;
     }
     .experience-index {
-      font-size: 17px;
+      top: -4px;
     }
-    .about-section {
-      grid-template-columns: 1fr;
-      gap: 25px;
-    }
-    .about-intro h2 {
-      font-size: clamp(42px, 9vw, 60px);
-    }
-    .about-signature {
-      display: none;
-    }
-    .about-copy {
-      padding-top: 8px;
-    }
-    .about-copy > p.about-lead {
-      font-size: 22px;
-    }
-    .skills-list > div {
-      grid-template-columns: 1fr 1.7fr;
-      gap: 15px;
-    }
-    .contact-section {
-      padding-block: 35px;
-      border-radius: 48px 20px 48px 20px;
-      margin-inline: 8px;
-    }
-    .contact-top {
+    .current-label {
+      margin-top: 0;
       font-size: 7px;
+    }
+    .experience-content :where(h3) {
+      font-size: 32px;
+    }
+    .experience-content :where(li) {
+      font-size: 13px;
+    }
+    .company {
+      font-size: 12px;
+    }
+    .company > :where(span) {
+      font-size: 10px;
+    }
+    .about-inner {
+      grid-template-columns: 1fr;
+      gap: 45px;
+      padding-block: 65px;
+    }
+    .about-intro :where(h2) {
+      font-size: 55px;
+    }
+    .about-intro :where(p:not(.eyebrow, .about-lead)) {
+      font-size: 14px;
+    }
+    .education-wrap {
+      max-width: 420px;
+      width: calc(100% - 12px);
+      margin-inline: auto;
+      padding: 28px 13px 0;
+    }
+    .education-card {
+      padding: 28px;
+    }
+    .education-card :where(h3) {
+      font-size: 36px;
+    }
+    .education-card :where(p:not(.education-year, .education-specialization)) {
+      font-size: 12px;
+    }
+    .skills-section {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .skills-heading :where(h2) {
+      font-size: 55px;
+    }
+    .skill-row {
       gap: 18px;
     }
-    .contact-top .section-kicker {
+    .skill-row :where(h3) {
+      font-size: 28px;
+    }
+    .skill-row :where(p) {
+      font-size: 13px;
+    }
+    .contact-section {
+      padding-block: 48px;
+    }
+    .contact-inner > .eyebrow {
       font-size: 8px;
     }
     .contact-heading {
-      margin-block: 35px;
-      gap: 12px;
+      gap: 22px;
+      flex-wrap: wrap;
+      margin-block: 25px 30px;
     }
-    .contact-heading h2 {
-      font-size: clamp(45px, 9vw, 65px);
+    .contact-heading :where(h2) {
+      font-size: 51px;
     }
     .contact-arrow {
-      width: 62px;
-      height: 62px;
-      flex-shrink: 0;
+      width: 63px;
+      height: 63px;
     }
-    .contact-arrow svg {
-      width: 30px;
-      height: 30px;
+    .contact-arrow :where(svg) {
+      width: 33px;
+      height: 33px;
+    }
+    .contact-bottom {
+      flex-direction: column;
+      gap: 24px;
     }
     .email-link {
-      font-size: clamp(13px, 3.8vw, 17px);
-      gap: 7px;
+      font-size: clamp(13px, 3.7vw, 20px);
+      gap: 8px;
     }
-    .email-link svg {
+    .email-link :where(svg) {
       width: 16px;
       height: 16px;
-    }
-    .contact-bottom p {
-      font-size: 10px;
     }
     .site-footer {
       align-items: flex-start;
       flex-direction: column;
-      gap: 21px;
-      padding-block: 26px;
+      padding-block: 28px;
+      gap: 25px;
     }
     .site-footer > div {
-      gap: 28px;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 10px;
     }
-    .experience-section {
-      border-radius: 48px 20px 48px 20px;
-      margin-inline: 8px;
+  }
+  @media (max-width: 380px) {
+    .container {
+      width: calc(100% - 36px);
+    }
+    .wordmark-caption {
+      font-size: 6px;
+    }
+    .wordmark {
+      gap: 9px;
+      font-size: 22px;
+    }
+    .monogram {
+      width: 39px;
+      height: 45px;
+    }
+    .hero :where(h1) {
+      font-size: 60px;
+    }
+    .hero-copy > .eyebrow {
+      font-size: 7px;
+      gap: 7px;
+    }
+    .hero-links {
+      gap: 15px;
+    }
+    .hero-links .button {
+      font-size: 10px;
+      gap: 11px;
+      padding-inline: 15px;
+    }
+    .hero-links .text-link {
+      font-size: 10px;
+      gap: 6px;
+    }
+    .hero-gallery {
+      height: 455px;
+    }
+    .portrait-frame {
+      width: 71%;
+      left: 7%;
+      padding: 9px 9px 0;
+    }
+    .portrait-mat {
+      height: 240px;
+    }
+    .interior-frame {
+      height: 190px;
+      width: 77%;
+    }
+    .gallery-seal {
+      left: -5px;
+      bottom: 44px;
+      width: 105px;
+      height: 105px;
+    }
+    .gallery-seal :where(svg) {
+      width: 105px;
+      height: 105px;
+    }
+    .gallery-seal :where(span) {
+      font-size: 7px;
+    }
+    .gallery-seal :where(em) {
+      font-size: 13px;
+    }
+    .gallery-caption {
+      font-size: 5px;
+    }
+    .ribbon :where(span) {
+      font-size: 18px;
+    }
+    .ribbon-inner {
+      column-gap: 8px;
+    }
+    .featured-copy {
+      padding-inline: 23px;
+    }
+    .featured-copy :where(h3) {
+      font-size: 50px;
+    }
+    .voucher-scene {
+      min-height: 350px;
+    }
+    .voucher-card {
+      padding: 21px;
+    }
+    .voucher-title {
+      font-size: 39px;
+    }
+    .voucher-shadow {
+      height: 235px;
+    }
+    .project-art {
+      min-height: 330px;
+    }
+    .document-sheet {
+      padding: 15px;
+      height: 205px;
+    }
+    .document-sheet-back {
+      padding-top: 32px;
+    }
+    .artwork-flourish {
+      font-size: 22px;
+    }
+    .community-arch {
+      width: 57%;
+      left: 18%;
+      height: 250px;
+      top: 26px;
+    }
+    .community-flower {
+      font-size: 90px;
+    }
+    .dashboard-window {
+      width: 74%;
+      left: 10%;
+      top: 35px;
+    }
+    .dashboard-seal {
+      width: 90px;
+      height: 90px;
+      font-size: 22px;
+      bottom: 25px;
+    }
+    .impact-number {
+      font-size: 88px;
+    }
+    .impact-number :where(span) {
+      font-size: 39px;
+    }
+    .impact-copy :where(h2) {
+      font-size: 27px;
+    }
+    .impact-inner {
+      gap: 13px;
+    }
+    .impact-copy :where(p) {
+      font-size: 9px;
+    }
+    .experience-content :where(h3) {
+      font-size: 30px;
+    }
+    .current-label {
+      width: 100%;
+      margin-top: 5px;
+    }
+    .education-card {
+      padding-inline: 23px;
+    }
+    .education-card :where(h3) {
+      font-size: 32px;
+    }
+    .contact-heading :where(h2) {
+      font-size: 46px;
     }
   }
   @media (prefers-reduced-motion: reduce) {

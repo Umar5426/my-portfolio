@@ -1,8 +1,9 @@
 import Image from "next/image";
 import portrait from "@/assets/profile-img.png";
-import { checker, experience, profile, projects, skills } from "@/lib/portfolio";
+import { checker, education, experience, profile, projects, skills } from "@/lib/portfolio";
 import { ArrowDown, ArrowUpRight } from "./components/icons";
 import Navigation from "./components/navigation";
+import { ProjectArtwork, Rosette } from "./components/project-artwork";
 
 export default function Home() {
   return (
@@ -14,120 +15,128 @@ export default function Home() {
       <main id="main">
         <section id="home" className="hero container" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <div className="eyebrow">
+            <p className="eyebrow">
               <span className="status-dot" /> IT SYSTEMS MANAGER · CHECKER CABS
-            </div>
+            </p>
+            <p className="hero-prelude">A little curiosity. A lot of purpose.</p>
             <h1 id="hero-title">
-              Systems that
+              Good systems.
               <br />
-              move things
-              <br />
-              <em>forward.</em>
-              <span className="hero-period">↗</span>
+              <em>Human touch.</em>
             </h1>
             <p className="hero-description">
-              I&apos;m Umar, an IT Systems Manager and software developer in Calgary. I connect
-              technology with the people and businesses that use it.
+              I&apos;m <strong>Umar Khan</strong>, a software engineer and IT Systems Manager in
+              Calgary. I bring people, products and technology together to make everyday work a
+              little better.
             </p>
             <div className="hero-links">
-              <a className="button button-dark" href="#work">
-                Explore my work <ArrowDown />
+              <a className="button button-red" href="#work">
+                Step inside my work <ArrowDown />
               </a>
-              <a className="text-link" href="#about">
-                A little about me <ArrowUpRight />
+              <a className="text-link" href="/UmarKhanResume.pdf" download>
+                My résumé <ArrowUpRight />
               </a>
             </div>
-            <div className="hero-footnote">
-              <span className="location-mark" aria-hidden="true">
-                ⊕
-              </span>{" "}
-              BASED IN CALGARY, ALBERTA <span className="hero-footnote-line" />
+            <div className="hero-note">
+              <span aria-hidden="true">✳</span>
+              <p>
+                Currently building useful things at
+                <br />
+                <strong>Checker Cabs · The Checker Group</strong>
+              </p>
             </div>
           </div>
-          <div className="hero-visual">
-            <div className="portrait-frame">
+          <div className="hero-gallery">
+            <div className="gallery-wall" aria-hidden="true" />
+            <figure className="portrait-frame">
+              <div className="portrait-mat">
+                <Image
+                  src={portrait}
+                  alt="Umar Khan"
+                  fill
+                  priority
+                  sizes="(max-width: 760px) 67vw, 26vw"
+                  className="portrait"
+                />
+              </div>
+              <figcaption>
+                Umar Khan <span>Calgary, Alberta</span>
+              </figcaption>
+            </figure>
+            <figure className="interior-frame">
               <Image
-                src={portrait}
-                alt="Umar Khan"
+                src="/images/study-editorial.webp"
+                alt="Decorative editorial study with oxblood velvet, warm wood, art and brass accents"
                 fill
-                priority
-                sizes="(max-width: 760px) 85vw, 38vw"
-                className="portrait"
+                sizes="(max-width: 760px) 70vw, 27vw"
+                className="interior-image"
               />
-              <div className="portrait-shade" />
-              <div className="portrait-caption">
-                <span>MUHAMMED UMAR KHAN</span>
-                <span>CALGARY, CA</span>
-              </div>
-            </div>
-            <div className="current-role">
-              <span className="role-symbol" aria-hidden="true">
-                ↗
+              <figcaption aria-hidden="true">Make room for good ideas.</figcaption>
+            </figure>
+            <div className="gallery-seal">
+              <Rosette />
+              <span>
+                ENGINEER
+                <br />
+                BY TRAINING.
+                <br />
+                <em>Builder at heart.</em>
               </span>
-              <div>
-                <span className="small-label">CURRENTLY AT</span>
-                <strong>Checker Cabs</strong>
-                <span>IT Systems Manager</span>
-              </div>
-              <span className="status-dot" />
             </div>
-            <span className="portrait-side-note">BUILDING WITH PURPOSE. ALWAYS LEARNING.</span>
+            <span className="gallery-caption">A PERSONAL COLLECTION OF WORK & IDEAS / CALGARY</span>
           </div>
         </section>
-
-        <div className="focus-strip">
-          <div className="container focus-inner">
-            <span>IT SYSTEMS</span>
-            <span className="strip-star">✳</span>
-            <span>SOFTWARE DEVELOPMENT</span>
-            <span className="strip-star">✳</span>
-            <span>PRODUCT THINKING</span>
-            <span className="strip-star">✳</span>
-            <span>CALGARY → EVERYWHERE</span>
+        <div className="ribbon">
+          <div className="container ribbon-inner">
+            <span>Systems with substance</span>
+            <i aria-hidden="true">✳</i>
+            <span>Software with purpose</span>
+            <i aria-hidden="true">✳</i>
+            <span>People at the centre</span>
           </div>
         </div>
-
         <section id="work" className="section container" aria-labelledby="work-title">
           <div className="section-heading">
             <div>
-              <span className="eyebrow section-kicker">01 / SELECTED WORK</span>
+              <p className="eyebrow section-kicker">01 / A COLLECTION OF WORK</p>
               <h2 id="work-title">
-                Ideas, made
+                Made to be <em>useful.</em>
                 <br />
-                <em>real.</em>
+                Built to be <em>used.</em>
               </h2>
             </div>
             <p>
-              Business software and personal experiments.
-              <br />A selection of things I&apos;ve built.
+              A few things I&apos;ve helped bring to life.
+              <br />
+              From everyday operations to ideas
+              <br className="desktop-break" /> with a bigger purpose.
             </p>
           </div>
           <article className="featured-project" id="e-vouchers">
             <div className="featured-copy">
-              <div className="project-topline">
-                <span className="project-number">01</span>
-                <span className="pill">FEATURED PROJECT</span>
-              </div>
-              <span className="small-label">CHECKER CABS · BUSINESS SOFTWARE</span>
+              <p className="eyebrow">01 / CHECKER CABS</p>
+              <span className="project-type">BUSINESS SOFTWARE</span>
               <h3>
-                e-vouchers<span className="accent-dot">.</span>
+                A better way
+                <br />
+                to <em>go places.</em>
               </h3>
+              <p className="project-name">e-vouchers by Umar Khan</p>
               <p>
-                I created e-vouchers for Checker Cabs, bringing my software development work into
-                the business where I manage IT systems.
+                I created e-vouchers for Checker Cabs, alongside my work developing internal
+                applications and connecting the systems behind the business.
               </p>
-              <p className="featured-secondary">
-                Interested in e-vouchers for your business? Checker&apos;s sales department can
-                share more and help you get started.
+              <p>
+                Want to find out more? Checker&apos;s sales team can help with e-voucher enquiries.
               </p>
               <a className="button button-gold" href={`tel:${checker.salesPhone}`}>
                 Talk to Checker Sales <ArrowUpRight />
               </a>
               <div className="sales-detail">
                 <a href={`tel:${checker.salesPhone}`}>{checker.salesPhoneDisplay}</a>
-                <span>·</span>
+                <span aria-hidden="true">·</span>
                 <a href={checker.contact} target="_blank" rel="noopener noreferrer">
-                  Contact Checker <ArrowUpRight />
+                  Checker contact page <ArrowUpRight />
                 </a>
               </div>
             </div>
@@ -136,9 +145,11 @@ export default function Home() {
               role="img"
               aria-label="Decorative concept illustration for the e-vouchers project. Not an actual or redeemable voucher."
             >
-              <div className="scene-grid" />
-              <span className="scene-index">CHECKER CABS / E-VOUCHERS</span>
-              <div className="voucher-card voucher-card-back" />
+              <span className="scene-corner" aria-hidden="true">
+                ✳
+              </span>
+              <span className="scene-index">A CHECKER CABS PROJECT</span>
+              <div className="voucher-shadow" />
               <div className="voucher-card">
                 <div className="voucher-brand">
                   <span className="checker-pattern" />
@@ -157,181 +168,208 @@ export default function Home() {
                 <div className="voucher-divider" />
                 <div className="voucher-bottom">
                   <span>e-vouchers</span>
-                  <span className="voucher-bars" />
+                  <span>CALGARY, AB</span>
                 </div>
               </div>
-              <span className="scene-caption">PROJECT ILLUSTRATION · NOT A REDEEMABLE VOUCHER</span>
-              <span className="scene-orbit" />
+              <span className="scene-caption">PROJECT ILLUSTRATION / NOT A REDEEMABLE VOUCHER</span>
             </div>
           </article>
-          <div className="project-grid">
+          <div className="project-collection">
             {projects.map((project) => (
-              <article className="project" key={project.number}>
-                <a
-                  className={`project-image ${project.style}`}
-                  href={project.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${project.linkLabel}: ${project.title}`}
-                >
-                  <div className="project-browser">
-                    <div className="browser-bar">
-                      <i />
-                      <i />
-                      <i />
-                      <span>{project.title}</span>
-                    </div>
-                    <div className="project-screenshot">
-                      <Image
-                        src={project.image}
-                        alt={project.imageAlt}
-                        fill
-                        sizes="(max-width: 760px) 90vw, 45vw"
-                      />
-                    </div>
-                  </div>
-                  <span className="project-open">
-                    <ArrowUpRight />
+              <article className={`project project-${project.style}`} key={project.number}>
+                <div className={`project-art project-art-${project.style}`}>
+                  <ProjectArtwork variant={project.style} />
+                  <span className="art-label">
+                    {project.organization}
+                    <br />
+                    {project.period}
                   </span>
-                </a>
-                <div className="project-heading">
-                  <div>
-                    <span className="small-label">
-                      {project.number} / {project.category}
-                    </span>
-                    <h3>
-                      <a href={project.href} target="_blank" rel="noopener noreferrer">
-                        {project.title}
-                      </a>
-                    </h3>
-                  </div>
-                  <ArrowUpRight />
                 </div>
-                <p>{project.description}</p>
-                <ul className="tags" aria-label="Technologies">
-                  {project.tags.map((tag) => (
-                    <li key={tag}>{tag}</li>
-                  ))}
-                </ul>
+                <div className="project-copy">
+                  <p className="eyebrow">
+                    {project.number} / {project.category}
+                  </p>
+                  <h3>{project.title}</h3>
+                  <p className="project-name">{project.name}</p>
+                  <p>{project.description}</p>
+                  <ul className="tags" aria-label="Project focus">
+                    {project.tags.map((tag) => (
+                      <li key={tag}>{tag}</li>
+                    ))}
+                  </ul>
+                </div>
               </article>
             ))}
           </div>
           <a
-            className="all-projects"
+            className="all-projects text-link"
             href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
           >
-            More projects & experiments on GitHub <ArrowUpRight />
+            The experiments continue on GitHub <ArrowUpRight />
           </a>
         </section>
-
-        <section id="experience" className="experience-section" aria-labelledby="experience-title">
-          <div className="container section">
-            <div className="section-heading">
-              <div>
-                <span className="eyebrow section-kicker">02 / EXPERIENCE</span>
-                <h2 id="experience-title">
-                  Different places.
-                  <br />
-                  <em>One curious mind.</em>
-                </h2>
-              </div>
-              <p>
-                From media and product experiences in Dubai
+        <section className="impact-section" aria-label="Impact at Checker Cabs">
+          <div className="container impact-inner">
+            <span className="impact-ornament" aria-hidden="true">
+              ✺
+            </span>
+            <p className="impact-number">
+              30<span>+</span>
+            </p>
+            <div className="impact-copy">
+              <h2>
+                Hours given back.
                 <br />
-                to systems and software in Calgary.
+                <em>Every week.</em>
+              </h2>
+              <p>
+                Over 30 hours of weekly workload saved through software automation and scripting at
+                Checker Cabs.
               </p>
             </div>
-            <div className="experience-list">
-              {experience.map((job, index) => (
-                <article
-                  className={`experience-row ${job.current ? "current" : ""}`}
-                  key={job.company}
-                >
-                  <div className="experience-period">
-                    {job.current && <span className="status-dot" />}
-                    {job.period}
-                  </div>
-                  <div className="experience-content">
-                    <h3>{job.role}</h3>
-                    <span className="company">{job.company}</span>
-                    <p>{job.description}</p>
-                  </div>
-                  <div className="experience-location">
-                    <span>{job.location}</span>
-                    <span className="experience-index">0{index + 1}</span>
-                  </div>
-                </article>
-              ))}
+            <p className="impact-aside">
+              Less repetition.
+              <br />
+              More room for
+              <br />
+              <em>what matters.</em>
+            </p>
+          </div>
+        </section>
+        <section
+          id="experience"
+          className="section container experience-section"
+          aria-labelledby="experience-title"
+        >
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow section-kicker">02 / THE PATH SO FAR</p>
+              <h2 id="experience-title">
+                A career built
+                <br />
+                on <em>curiosity.</em>
+              </h2>
+            </div>
+            <p>
+              Systems, architecture, product and software.
+              <br />A growing collection of perspectives.
+            </p>
+          </div>
+          <div className="experience-list">
+            {experience.map((job, index) => (
+              <article className="experience-row" key={job.company}>
+                <div className="experience-meta">
+                  <span className="experience-index">0{index + 1}</span>
+                  <p>{job.period}</p>
+                  <span>{job.location}</span>
+                  {job.current && (
+                    <span className="current-label">
+                      <span className="status-dot" /> CURRENT CHAPTER
+                    </span>
+                  )}
+                </div>
+                <div className="experience-content">
+                  <h3>{job.role}</h3>
+                  <p className="company">
+                    {job.company}
+                    {job.group && <span> / {job.group}</span>}
+                  </p>
+                  <ul>
+                    {job.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section id="about" className="about-section" aria-labelledby="about-title">
+          <div className="container about-inner">
+            <div className="about-intro">
+              <p className="eyebrow section-kicker">03 / THE PERSON BEHIND THE WORK</p>
+              <h2 id="about-title">
+                Technical mind.
+                <br />
+                <em>People first.</em>
+              </h2>
+              <p className="about-lead">Good technology begins with paying attention.</p>
+              <p>
+                I&apos;m {profile.fullName}, a University of Calgary software engineering graduate
+                and IT Systems Manager at Checker Cabs. My work brings together product design,
+                software development, cybersecurity analysis, DevOps and project delivery.
+              </p>
+              <p>
+                I enjoy the whole process: listening to people, making sense of the problem,
+                building the right system and seeing it become part of someone&apos;s everyday work.
+              </p>
+              <div className="signature">
+                Umar<span aria-hidden="true">✳</span>
+              </div>
+              <a
+                className="text-link"
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                A little more on LinkedIn <ArrowUpRight />
+              </a>
+            </div>
+            <div className="education-wrap">
+              <span className="education-pin" aria-hidden="true" />
+              <article className="education-card">
+                <div className="education-top">
+                  <span className="eyebrow">EDUCATION</span>
+                  <Rosette />
+                </div>
+                <p className="education-year">{education.year}</p>
+                <h3>{education.degree}</h3>
+                <p className="education-institution">{education.institution}</p>
+                <p>{education.school}</p>
+                <div className="education-rule" />
+                <p className="education-specialization">{education.specialization}</p>
+                <p className="education-location">{education.location}</p>
+              </article>
+              <p className="education-footnote">
+                A foundation in engineering.
+                <br />
+                <em>A lifelong appetite for learning.</em>
+              </p>
             </div>
           </div>
         </section>
-
-        <section
-          id="about"
-          className="section container about-section"
-          aria-labelledby="about-title"
-        >
-          <div className="about-intro">
-            <span className="eyebrow section-kicker">03 / THE PERSON BEHIND THE WORK</span>
-            <h2 id="about-title">
-              A builder.
-              <br />A problem solver.
+        <section className="section container skills-section" aria-labelledby="skills-title">
+          <div className="skills-heading">
+            <p className="eyebrow section-kicker">04 / THE TOOLKIT</p>
+            <h2 id="skills-title">
+              A well-stocked
               <br />
-              <em>Always curious.</em>
+              <em>set of skills.</em>
             </h2>
-            <div className="about-signature">
-              Umar<span>↗</span>
-            </div>
+            <p>From the first conversation to the final release.</p>
           </div>
-          <div className="about-copy">
-            <p className="about-lead">
-              Good technology starts with understanding the people who need it.
-            </p>
-            <p>
-              I&apos;m {profile.fullName}, based in {profile.location}. My background brings
-              together software engineering, product experience and hands-on IT systems management.
-            </p>
-            <p>
-              Today, I work as {profile.title} at {profile.company}, where I also created
-              e-vouchers. Earlier internships at MBC Shahid and Al Arabiya shaped how I approach
-              interfaces, products and the systems behind them.
-            </p>
-            <p>
-              I enjoy working across the whole problem: understanding what&apos;s needed, building
-              something useful and making it clearer along the way.
-            </p>
-            <div className="skills-list">
-              {skills.map((skill) => (
-                <div key={skill.title}>
+          <div className="skills-list">
+            {skills.map((skill, index) => (
+              <div className="skill-row" key={skill.title}>
+                <span className="skill-index">0{index + 1}</span>
+                <div>
                   <h3>{skill.title}</h3>
                   <p>{skill.text}</p>
                 </div>
-              ))}
-            </div>
-            <a
-              className="text-link"
-              href={profile.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Connect on LinkedIn <ArrowUpRight />
-            </a>
+              </div>
+            ))}
           </div>
         </section>
-
         <section id="contact" className="contact-section" aria-labelledby="contact-title">
-          <div className="container">
-            <div className="contact-top">
-              <span className="eyebrow section-kicker">04 / LET&apos;S CONNECT</span>
-              <span>CALGARY, ALBERTA · CANADA</span>
-            </div>
+          <div className="container contact-inner">
+            <p className="eyebrow">05 / THERE&apos;S ALWAYS ROOM FOR A CONVERSATION</p>
             <div className="contact-heading">
               <h2 id="contact-title">
-                Have something
+                Come with an idea.
                 <br />
-                <em>in mind?</em>
+                <em>Let&apos;s make it something.</em>
               </h2>
               <a
                 className="contact-arrow"
@@ -346,9 +384,10 @@ export default function Home() {
                 {profile.email} <ArrowUpRight />
               </a>
               <p>
-                For e-vouchers enquiries,{" "}
+                E-vouchers enquiries?
+                <br />
                 <a href={`tel:${checker.salesPhone}`}>
-                  contact Checker Sales <ArrowUpRight />
+                  Contact Checker Sales <ArrowUpRight />
                 </a>
               </p>
             </div>
@@ -357,9 +396,12 @@ export default function Home() {
       </main>
       <footer className="container site-footer">
         <a className="footer-name" href="#home">
-          Umar Khan<span>© {new Date().getFullYear()}</span>
+          Umar Khan <span>CALGARY, AB · © {new Date().getFullYear()}</span>
         </a>
         <div>
+          <a href="/UmarKhanResume.pdf" download>
+            Résumé <ArrowUpRight />
+          </a>
           <a href={profile.github} target="_blank" rel="noopener noreferrer">
             GitHub <ArrowUpRight />
           </a>
