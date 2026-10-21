@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f8f8f2"/>
+  <rect x="880" width="320" height="630" fill="#e2eaa7"/>
+  <text x="75" y="95" fill="#656b60" font-family="monospace" font-size="15" letter-spacing="2">UMAR KHAN / CALGARY, ALBERTA</text>
+  <g fill="#272b25" font-family="Arial, sans-serif" font-size="100" letter-spacing="-6"><text x="70" y="250">Systems that</text><text x="70" y="355">move things</text></g>
+  <text x="70" y="462" fill="#656b60" font-family="Georgia, serif" font-style="italic" font-size="110" letter-spacing="-6">forward.</text>
+  <text x="73" y="563" fill="#272b25" font-family="Arial, sans-serif" font-size="20">IT Systems Manager at Checker Cabs · Creator of e-vouchers</text>
+  <path d="M957 352l145-145m-145 0h145v145" fill="none" stroke="#485523" stroke-width="9"/>
+</svg>
