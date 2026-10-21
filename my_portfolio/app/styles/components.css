@@ -7,7 +7,7 @@
     backdrop-filter: blur(16px);
   }
   .nav-inner {
-    height: 96px;
+    height: 88px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -16,57 +16,68 @@
   .wordmark {
     display: inline-flex;
     align-items: center;
-    gap: 14px;
-    font-family: var(--font-editorial), Georgia, serif;
-    font-size: 26px;
+    gap: 12px;
+    font-size: 16px;
     line-height: 1.1;
     font-weight: 600;
+    letter-spacing: -0.03em;
   }
   .monogram {
-    display: grid;
-    place-content: center;
-    width: 48px;
-    height: 54px;
-    border: 1px solid var(--gold);
-    border-radius: 50% 50% 3px 3px;
-    font-size: 29px;
-    position: relative;
-    color: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    color: var(--ink);
+    border: 1px solid var(--line);
+    font-size: 20px;
+    font-weight: 500;
   }
   .monogram > :where(span) {
-    display: none;
-  }
-  .monogram::before {
-    content: "";
-    position: absolute;
-    inset: 3px;
-    border: 1px solid var(--gold);
-    border-radius: inherit;
+    color: var(--red);
   }
   .wordmark-caption {
     display: block;
-    margin-top: 7px;
-    font-family: var(--font-sans), sans-serif;
     font-size: 8px;
-    letter-spacing: 0.12em;
-    font-weight: 500;
-    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.01em;
+    margin-top: 7px;
   }
   .desktop-nav {
     display: flex;
-    gap: 37px;
-    font-size: 12px;
+    gap: 29px;
+    font-size: 11px;
   }
   .desktop-nav :where(a) {
-    padding-block: 10px;
+    position: relative;
+    padding-block: 12px;
+    color: var(--muted);
+    transition: color 180ms;
+  }
+  .desktop-nav :where(a)::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 200ms;
   }
   .desktop-nav :where(a):hover {
-    color: var(--red);
+    color: var(--ink);
+  }
+  .desktop-nav :where(a):hover::after {
+    transform: scaleX(1);
   }
   .nav-actions {
     display: flex;
     align-items: center;
-    gap: 23px;
+    gap: 20px;
   }
   .theme-toggle {
     border: 0;
@@ -81,221 +92,207 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    border-bottom: 1px solid var(--gold);
-    font-size: 12px;
-    padding-block: 6px;
+    font-size: 11px;
   }
   .mobile-menu {
     display: none;
   }
   .hero {
     display: grid;
-    grid-template-columns: 1.04fr 1fr;
-    gap: 4%;
-    min-height: 710px;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 7%;
     align-items: center;
-    padding-top: 48px;
-    padding-bottom: 76px;
-  }
-  .hero-copy {
-    padding-top: 4px;
+    padding-top: 58px;
+    padding-bottom: 65px;
   }
   .hero-copy > .eyebrow {
     color: var(--red);
-    margin-bottom: 34px;
-  }
-  .hero-prelude {
-    font-family: var(--font-editorial), Georgia, serif;
-    color: var(--green);
-    font-style: italic;
-    font-size: 22px;
-    margin-bottom: 12px;
+    margin-bottom: 27px;
   }
   .hero :where(h1) {
-    font-size: clamp(68px, 7.2vw, 104px);
-    line-height: 0.93;
-    letter-spacing: -0.048em;
+    font-size: clamp(52px, 5.35vw, 78px);
+    line-height: 1.06;
+    letter-spacing: -0.045em;
+    font-weight: 550;
   }
-  .hero :where(h1) :where(em) {
-    color: var(--red);
+  .hero :where(h1) :where(span) {
+    color: var(--accent);
   }
   .hero-description {
-    max-width: 440px;
-    font-size: 14px;
-    margin-top: 28px;
+    max-width: 465px;
+    margin-top: 25px;
+    font-size: 15px;
     color: var(--muted);
-    line-height: 1.9;
+    line-height: 1.85;
   }
-  .hero-description strong {
+  .hero-description :where(strong) {
+    font-weight: 500;
     color: var(--ink);
-    font-weight: 600;
   }
   .hero-links {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 25px;
     margin-top: 28px;
   }
-  .hero-note {
+  .hero-proof {
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin-top: 40px;
+    gap: 18px;
+    margin-top: 39px;
+    padding-left: 18px;
+    border-left: 2px solid var(--gold);
   }
-  .hero-note > :where(span) {
-    font-size: 34px;
-    color: var(--gold);
+  .hero-proof > :where(strong) {
+    font-size: 40px;
+    font-weight: 500;
     line-height: 1;
+    letter-spacing: -0.06em;
   }
-  .hero-note :where(p) {
+  .hero-proof > :where(strong) :where(span) {
+    font-size: 24px;
+    vertical-align: top;
+    line-height: 1.2;
+    color: var(--accent);
+  }
+  .hero-proof :where(p) {
     font-size: 10px;
     line-height: 1.7;
+  }
+  .hero-proof :where(b) {
+    display: block;
+    font-weight: 500;
+  }
+  .hero-proof :where(p) :where(span) {
+    display: block;
     color: var(--muted);
   }
-  .hero-note strong {
-    color: var(--green);
-    font-weight: 600;
-  }
-  .hero-gallery {
-    position: relative;
-    height: 565px;
+  .hero-visual {
     width: 100%;
-  }
-  .gallery-wall {
-    position: absolute;
-    inset: 25px 10px 15px 30px;
-    border-radius: 48% 48% 3px 3px;
-    background:
-      repeating-linear-gradient(90deg, #747b5733 0 18px, transparent 18px 36px), #dad7b433;
-    border: 1px solid #a3a17c44;
+    min-width: 0;
   }
   .portrait-frame {
-    position: absolute;
-    top: 0;
-    left: 9%;
-    width: 62%;
-    background: #8e6333;
-    border: 7px ridge #be995e;
-    padding: 16px 16px 0;
-    box-shadow: 0 10px 25px #3a2e3228;
-    transform: rotate(-5deg);
-    z-index: 2;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    background: var(--card);
   }
-  .portrait-mat {
-    height: 305px;
+  .portrait-image {
     position: relative;
-    border: 9px solid #efe3cb;
-    outline: 1px solid #4a342b;
+    height: 370px;
+    background: var(--paper);
   }
   .portrait {
     object-fit: cover;
-    object-position: 50% 31%;
+    object-position: 50% 20%;
   }
   .portrait-frame :where(figcaption) {
-    color: #fff1d8;
-    padding-block: 11px;
-    font-family: var(--font-editorial), Georgia, serif;
-    font-size: 20px;
-    text-align: center;
-    line-height: 1.2;
-  }
-  .portrait-frame :where(figcaption) :where(span) {
-    display: block;
-    font-family: var(--font-sans), sans-serif;
-    font-size: 7px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-top: 5px;
-  }
-  .interior-frame {
-    position: absolute;
-    width: 69%;
-    height: 238px;
-    right: -1%;
-    bottom: 26px;
-    border: 8px solid #f9efd9;
-    outline: 1px solid #b39d76;
-    box-shadow: 0 12px 28px #3a2e3230;
-    transform: rotate(5deg);
-    z-index: 3;
-  }
-  .interior-image {
-    object-fit: cover;
-  }
-  .interior-frame :where(figcaption) {
-    position: absolute;
-    bottom: 10px;
-    left: 16px;
-    color: #fff5df;
-    text-shadow: 0 1px 8px #000;
-    font-family: var(--font-editorial), Georgia, serif;
-    font-size: 21px;
-    font-style: italic;
-  }
-  .gallery-seal {
-    position: absolute;
-    bottom: 67px;
-    left: 0;
-    z-index: 4;
-    width: 134px;
-    height: 134px;
-    display: grid;
-    place-content: center;
-    color: #e5b74f;
-    transform: rotate(-10deg);
-  }
-  .gallery-seal :where(svg) {
-    width: 134px;
-    height: 134px;
-    position: absolute;
-    inset: 0;
-  }
-  .gallery-seal :where(svg) circle,
-  .gallery-seal :where(svg) :where(path):last-child {
-    display: none;
-  }
-  .gallery-seal :where(span) {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    font-size: 9px;
-    letter-spacing: 0.07em;
-    line-height: 1.6;
-    color: #513724;
-  }
-  .gallery-seal :where(em) {
-    font-family: var(--font-editorial), Georgia, serif;
-    font-size: 16px;
-    letter-spacing: 0;
-  }
-  .gallery-caption {
-    position: absolute;
-    bottom: -10px;
-    left: 14%;
-    font-size: 7px;
-    color: var(--muted);
-    letter-spacing: 0.16em;
-  }
-  .ribbon {
-    background: #374c3c;
-    color: #f6ebd3;
-    border-block: 6px double #a7a17a;
-  }
-  .ribbon-inner {
+    padding: 17px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    padding-block: 17px;
+    gap: 10px;
   }
-  .ribbon :where(span) {
-    font-family: var(--font-editorial), Georgia, serif;
-    font-size: 25px;
-    font-style: italic;
+  .portrait-frame :where(strong) {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
   }
-  .ribbon :where(i) {
-    font-size: 21px;
-    color: #e6bb55;
-    font-style: normal;
+  .portrait-frame :where(figcaption) :where(span) {
+    display: block;
+    font-size: 9px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+  .portrait-location {
+    white-space: nowrap;
+  }
+  .hero-systems {
+    margin-top: 20px;
+    padding-inline: 20px;
+  }
+  .hero-systems > .small-label {
+    display: block;
+    font-size: 8px;
+    color: var(--muted);
+  }
+  .systems-visual {
+    position: relative;
+  }
+  .systems-visual :where(svg) {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  .system-line {
+    stroke: var(--line);
+    stroke-width: 1;
+  }
+  .system-flow {
+    stroke: var(--accent);
+    stroke-width: 1.5;
+    stroke-dasharray: 12 138;
+  }
+  .systems-visual :where(circle) {
+    fill: var(--page);
+    stroke: var(--accent);
+    stroke-width: 1.5;
+  }
+  .system-labels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    color: var(--muted);
+    font-size: 9px;
+    margin-top: -12px;
+  }
+  .expertise-section {
+    background: var(--paper);
+    border-block: 1px solid var(--line);
+    padding-block: 45px;
+  }
+  .expertise-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--line);
+  }
+  .expertise-heading .section-kicker {
+    margin: 0;
+  }
+  .expertise-heading :where(h2) {
+    font-size: 26px;
+    letter-spacing: -0.035em;
+  }
+  .capability-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+    padding-top: 32px;
+  }
+  .capability-icon {
+    width: 30px;
+    height: 30px;
+    color: var(--accent);
+  }
+  .capability :where(h3) {
+    font-size: 19px;
+    margin-top: 18px;
+    letter-spacing: -0.025em;
+  }
+  .capability :where(p) {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-top: 12px;
+    max-width: 325px;
+  }
+  .capability > :where(span) {
+    display: block;
+    margin-top: 19px;
+    color: var(--accent);
+    font-size: 9px;
   }
 }

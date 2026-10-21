@@ -1,88 +1,92 @@
-export function Rosette() {
+export function CapabilityIcon({ variant }) {
   return (
-    <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
-      <path
-        d="m50 4 9 12 14-3 3 14 13 6-5 14 10 11-12 9 1 15-15 1-8 13-13-7-13 7-8-13-15-1 1-15L6 58l10-11-5-14 13-6 3-14 14 3Z"
-        fill="currentColor"
-      />
-      <circle cx="50" cy="49" r="26" stroke="var(--page)" />
-      <path d="m50 28 4 16 17 5-17 4-4 17-4-17-17-4 17-5Z" fill="var(--page)" />
+    <svg
+      className="capability-icon"
+      viewBox="0 0 32 32"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      {variant === "systems" ? (
+        <>
+          <rect x="3" y="3" width="9" height="9" rx="2" />
+          <rect x="20" y="20" width="9" height="9" rx="2" />
+          <path d="M12 7h9a4 4 0 0 1 4 4v9M7 12v9a4 4 0 0 0 4 4h9" />
+        </>
+      ) : variant === "software" ? (
+        <>
+          <rect x="3" y="5" width="26" height="22" rx="3" />
+          <path d="M3 11h26m-18 5-4 3 4 3m10-6 4 3-4 3m-3-7-4 10" />
+        </>
+      ) : (
+        <>
+          <path d="M5 7h22M5 16h22M5 25h22" />
+          <circle cx="12" cy="7" r="3" fill="var(--card)" />
+          <circle cx="22" cy="16" r="3" fill="var(--card)" />
+          <circle cx="10" cy="25" r="3" fill="var(--card)" />
+        </>
+      )}
     </svg>
   );
 }
 
-export function ProjectArtwork({ variant }) {
+export function SystemsVisual() {
   return (
-    <div className={`artwork artwork-${variant}`} aria-hidden="true">
-      {variant === "documents" ? (
-        <>
-          <div className="document-sheet document-sheet-back">
-            <span />
-            <span />
-            <span />
-            <span />
+    <div className="systems-visual" aria-hidden="true">
+      <svg viewBox="0 0 420 70" fill="none" aria-hidden="true">
+        <path d="M70 35h280" className="system-line" />
+        <path d="M70 35h280" className="system-flow" />
+        <circle cx="70" cy="35" r="8" />
+        <circle cx="210" cy="35" r="8" />
+        <circle cx="350" cy="35" r="8" />
+      </svg>
+      <div className="system-labels">
+        <span>Systems</span>
+        <span>Software</span>
+        <span>People</span>
+      </div>
+    </div>
+  );
+}
+
+const workflows = {
+  documents: {
+    label: "DOCUMENT INTELLIGENCE",
+    steps: ["Source documents", "Approved templates", "Standardized output"],
+    note: "Software architecture · Automated ML pipeline",
+  },
+  community: {
+    label: "COMMUNITY APPLICATION",
+    steps: ["User needs", "Web application", "Public APIs"],
+    note: "Design · React development · Integration",
+  },
+  dashboard: {
+    label: "EMPLOYEE MANAGEMENT",
+    steps: ["Web & mobile", "Access control", "Employee data"],
+    note: "Next.js · React Native · Role-based access",
+  },
+};
+
+export function ProjectArtwork({ variant }) {
+  const workflow = workflows[variant];
+  return (
+    <div className="project-diagram" aria-hidden="true">
+      <span className="diagram-label">{workflow.label}</span>
+      <div className="diagram-steps">
+        {workflow.steps.map((step, index) => (
+          <div className="diagram-step" key={step}>
+            <span className="diagram-node">0{index + 1}</span>
+            <span>{step}</span>
           </div>
-          <div className="document-sheet">
-            <span className="document-mark">a.</span>
-            <div className="document-line" />
-            <div className="document-line" />
-            <div className="document-line short" />
-            <span className="document-stamp">✳</span>
-          </div>
-          <span className="artwork-flourish">
-            a little order,
-            <br />
-            <em>a lot of possibility.</em>
-          </span>
-        </>
-      ) : variant === "community" ? (
-        <>
-          <div className="community-arch">
-            <span className="community-sun">✺</span>
-            <span className="community-title">
-              room
-              <br />
-              for <em>good.</em>
-            </span>
-            <div className="community-hills" />
-          </div>
-          <div className="community-flower">✳</div>
-        </>
-      ) : (
-        <>
-          <div className="dashboard-window">
-            <div className="dashboard-top">
-              <span />
-              <span />
-              <span />
-            </div>
-            <div className="dashboard-body">
-              <span className="dashboard-avatar">uk</span>
-              <div className="dashboard-lines">
-                <i />
-                <i />
-              </div>
-              <div className="dashboard-chart">
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-              </div>
-              <div className="dashboard-rows">
-                <i />
-                <i />
-                <i />
-              </div>
-            </div>
-          </div>
-          <span className="dashboard-seal">
-            people,
-            <br />
-            <em>connected.</em>
-          </span>
-        </>
-      )}
+        ))}
+      </div>
+      <div className="diagram-bottom">
+        <span>{workflow.note}</span>
+        <span>ILLUSTRATIVE OVERVIEW</span>
+      </div>
     </div>
   );
 }

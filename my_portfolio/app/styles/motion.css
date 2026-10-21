@@ -1,0 +1,93 @@
+@layer components {
+  [data-reveal] {
+    transition:
+      opacity 650ms cubic-bezier(0.2, 0.7, 0.3, 1),
+      transform 650ms cubic-bezier(0.2, 0.7, 0.3, 1);
+  }
+  .reveal-pending {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  .hero-copy > .eyebrow,
+  .hero h1,
+  .hero-description,
+  .hero-links,
+  .hero-proof,
+  .hero-visual {
+    animation: enter 750ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  }
+  .hero h1 {
+    animation-delay: 80ms;
+  }
+  .hero-description {
+    animation-delay: 150ms;
+  }
+  .hero-links {
+    animation-delay: 220ms;
+  }
+  .hero-proof {
+    animation-delay: 290ms;
+  }
+  .hero-visual {
+    animation-delay: 180ms;
+  }
+  .system-flow {
+    animation: connection-flow 9s linear infinite;
+  }
+  @keyframes enter {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes connection-flow {
+    from {
+      stroke-dashoffset: 150;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+@layer responsive {
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    .hero-copy > .eyebrow,
+    .hero h1,
+    .hero-description,
+    .hero-links,
+    .hero-proof,
+    .hero-visual,
+    .system-flow {
+      animation: none;
+    }
+    [data-reveal],
+    .button,
+    .text-link,
+    .text-link svg,
+    .button svg,
+    .diagram-node,
+    .contact-arrow,
+    .desktop-nav a,
+    .desktop-nav a::after {
+      transition: none;
+    }
+    .reveal-pending {
+      opacity: 1;
+      transform: none;
+    }
+    .project:hover .diagram-node,
+    .button:hover,
+    .contact-arrow:hover,
+    .text-link:hover svg,
+    .button:hover svg {
+      transform: none;
+    }
+  }
+}

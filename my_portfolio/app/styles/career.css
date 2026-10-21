@@ -1,77 +1,25 @@
 @layer components {
-  .impact-section {
-    background: #8c302c;
-    color: #f8edda;
-    border-block: 7px double #e6bb5577;
-  }
-  .impact-inner {
-    display: grid;
-    grid-template-columns: 55px auto 1fr auto;
-    gap: 34px;
-    align-items: center;
-    padding-block: 48px;
-  }
-  .impact-ornament {
-    font-size: 57px;
-    color: #e6bb55;
-  }
-  .impact-number {
-    font-family: var(--font-editorial), Georgia, serif;
-    font-size: 150px;
-    letter-spacing: -0.06em;
-    line-height: 1;
-  }
-  .impact-number :where(span) {
-    font-size: 72px;
-    vertical-align: top;
-    line-height: 1.5;
-  }
-  .impact-copy :where(h2) {
-    font-size: 40px;
-  }
-  .impact-copy :where(h2) :where(em) {
-    color: #f0c969;
-  }
-  .impact-copy :where(p) {
-    max-width: 335px;
-    color: #f1d6ce;
-    font-size: 13px;
-    margin-top: 14px;
-  }
-  .impact-aside {
-    font-family: var(--font-editorial), Georgia, serif;
-    font-size: 26px;
-    line-height: 1.08;
-    padding-left: 25px;
-    border-left: 1px solid #e6bb5577;
+  .experience-section {
+    background: var(--paper);
+    border-block: 1px solid var(--line);
   }
   .experience-list {
-    border-top: 1px solid var(--gold);
+    border-top: 1px solid var(--line);
   }
   .experience-row {
     display: grid;
-    grid-template-columns: 27% 1fr;
-    gap: 7%;
-    padding-block: 40px;
+    grid-template-columns: 23% 1fr;
+    gap: 5%;
+    padding-block: 34px;
     border-bottom: 1px solid var(--line);
   }
   .experience-meta {
-    position: relative;
-    padding-left: 38px;
     font-size: 11px;
   }
-  .experience-index {
-    position: absolute;
-    left: 0;
-    top: -4px;
-    font-family: var(--font-editorial), Georgia, serif;
-    font-size: 26px;
-    color: var(--gold);
-  }
   .experience-meta > :where(p) {
-    font-weight: 600;
+    font-weight: 500;
   }
-  .experience-meta > :where(span):not(.experience-index) {
+  .experience-meta > :where(span) {
     color: var(--muted);
   }
   .current-label {
@@ -79,203 +27,154 @@
     align-items: center;
     gap: 7px;
     font-size: 7px;
-    letter-spacing: 0.08em;
-    margin-top: 18px;
+    letter-spacing: 0.07em;
+    margin-top: 16px;
   }
   .experience-content :where(h3) {
-    font-size: 34px;
-    color: var(--green);
+    font-size: 25px;
+    letter-spacing: -0.035em;
   }
   .company {
-    font-size: 12px;
-    font-weight: 600;
-    margin-top: 9px;
-    color: var(--red);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-top: 10px;
   }
   .company > :where(span) {
-    font-size: 10px;
     color: var(--muted);
     font-weight: 400;
+    font-size: 10px;
   }
   .experience-content :where(ul) {
-    margin-top: 18px;
+    margin-top: 17px;
     display: grid;
-    gap: 10px;
+    gap: 9px;
   }
   .experience-content :where(li) {
     position: relative;
-    padding-left: 18px;
-    font-size: 14px;
+    padding-left: 17px;
     color: var(--muted);
-    max-width: 680px;
-    line-height: 1.85;
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 740px;
   }
   .experience-content :where(li)::before {
     content: "";
     position: absolute;
     left: 0;
     top: 11px;
-    width: 4px;
-    height: 4px;
+    width: 3px;
+    height: 3px;
     border-radius: 50%;
-    background: var(--gold);
+    background: var(--accent);
   }
   .about-section {
-    position: relative;
-    background: var(--paper);
-    border-block: 1px solid var(--line);
-  }
-  .about-inner {
     display: grid;
-    grid-template-columns: 1fr 0.9fr;
-    gap: 12%;
-    padding-block: 95px;
+    grid-template-columns: 1.2fr 0.8fr;
     align-items: center;
+    gap: 10%;
   }
   .about-intro :where(h2) {
-    font-size: 66px;
+    font-size: 43px;
   }
-  .about-intro :where(p:not(.eyebrow, .about-lead)) {
+  .about-intro > :where(p):not(.eyebrow) {
     font-size: 14px;
     color: var(--muted);
-    margin-top: 18px;
+    margin-top: 22px;
     line-height: 1.9;
+    max-width: 540px;
   }
-  .about-intro > .about-lead {
-    font-family: var(--font-editorial), Georgia, serif;
-    font-size: 27px;
-    line-height: 1.2;
-    color: var(--ink);
-    margin-top: 28px;
-  }
-  .signature {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    font-size: 50px;
-    font-style: italic;
-    color: var(--red);
-    margin-block: 22px;
-  }
-  .signature :where(span) {
-    font-family: var(--font-sans), sans-serif;
-    font-size: 28px;
-    color: var(--gold);
-  }
-  .education-wrap {
-    position: relative;
-    padding: 28px 15px 0;
-    background: repeating-linear-gradient(90deg, #747b571f 0 18px, transparent 18px 36px);
+  .about-intro .text-link {
+    margin-top: 24px;
   }
   .education-card {
-    position: relative;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px;
     background: var(--card);
-    padding: 30px;
-    border: 1px solid var(--gold);
-    outline: 1px solid var(--gold);
-    outline-offset: -9px;
-    box-shadow: 10px 10px 0 #84703e19;
-    transform: rotate(3deg);
   }
   .education-top {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    color: var(--green);
+    justify-content: space-between;
+    gap: 15px;
+    color: var(--muted);
   }
-  .education-top :where(svg) {
-    width: 44px;
-    height: 44px;
-    color: var(--gold);
+  .education-top .eyebrow {
+    font-size: 8px;
   }
   .education-year {
-    color: var(--red);
-    font-family: var(--font-editorial), Georgia, serif;
-    font-size: 72px;
-    line-height: 1;
-    margin-top: 15px;
+    font-size: 10px;
+  }
+  .education-card .capability-icon {
+    margin-top: 35px;
   }
   .education-card :where(h3) {
-    font-size: 38px;
-    max-width: 300px;
-    margin-top: 16px;
+    font-size: 26px;
+    line-height: 1.2;
+    margin-top: 18px;
   }
-  .education-card :where(p:not(.education-year, .education-specialization)) {
+  .education-card > :where(p) {
     font-size: 11px;
   }
   .education-institution {
-    color: var(--green);
-    font-weight: 600;
+    color: var(--accent);
+    font-weight: 500;
+    margin-top: 20px;
+  }
+  .education-card .education-specialization {
+    font-size: 12px;
+    padding-top: 18px;
     margin-top: 18px;
-  }
-  .education-rule {
-    width: 55px;
-    border-top: 1px solid var(--gold);
-    margin-block: 20px;
-  }
-  .education-specialization {
-    font-family: var(--font-editorial), Georgia, serif;
-    font-size: 24px;
-    line-height: 1.1;
-    font-style: italic;
-    color: var(--red);
+    border-top: 1px solid var(--line);
+    color: var(--accent);
   }
   .education-location {
-    margin-top: 16px;
     color: var(--muted);
-  }
-  .education-footnote {
-    text-align: center;
-    font-family: var(--font-editorial), Georgia, serif;
-    font-size: 21px;
-    line-height: 1.1;
-    color: var(--green);
-    padding: 27px 0 24px;
-  }
-  .education-pin {
-    position: absolute;
-    width: 35px;
-    height: 35px;
-    border: 10px solid #b49358;
-    border-radius: 50%;
-    left: 46%;
-    top: 13px;
-    z-index: 2;
-    box-shadow: 2px 3px 4px #3a2e3244;
+    margin-top: 13px;
   }
   .skills-section {
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-columns: 0.85fr 1.15fr;
     gap: 10%;
+    padding-top: 0;
   }
-  .skills-heading > :where(p):last-child {
-    font-size: 12px;
+  .skills-heading > :where(p):last-of-type {
     color: var(--muted);
-    margin-top: 22px;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-top: 23px;
+    max-width: 340px;
+  }
+  .skill-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 26px;
+    max-width: 340px;
+  }
+  .skill-highlights > :where(span) {
+    display: block;
+    padding: 6px 10px;
+    font-size: 10px;
+    color: var(--accent);
+    background: var(--soft-accent);
+    border-radius: 5px;
   }
   .skill-row {
-    display: flex;
-    gap: 22px;
-    padding-block: 22px;
+    padding-block: 20px;
     border-bottom: 1px solid var(--line);
   }
   .skill-row:first-child {
     padding-top: 0;
   }
-  .skill-index {
-    font-family: var(--font-editorial), Georgia, serif;
-    color: var(--gold);
-    font-size: 25px;
-    line-height: 1.2;
-  }
   .skill-row :where(h3) {
-    font-size: 26px;
-    color: var(--green);
+    font-size: 17px;
     letter-spacing: -0.02em;
   }
   .skill-row :where(p) {
+    font-size: 12px;
     color: var(--muted);
-    font-size: 13px;
     margin-top: 9px;
     line-height: 1.9;
   }

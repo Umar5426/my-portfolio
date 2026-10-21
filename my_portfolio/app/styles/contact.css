@@ -1,61 +1,61 @@
 @layer components {
   .contact-section {
-    color: #f8edda;
-    background: repeating-linear-gradient(90deg, #ffffff03 0 22px, transparent 22px 44px), #374c3c;
-    border-top: 7px double #b5ae84;
-    padding-block: 70px;
+    background: #292631;
+    color: #f5f2ef;
+    padding-block: 68px;
   }
   .contact-inner > .eyebrow {
-    color: #d6d6b4;
+    color: #bdb3c8;
   }
   .contact-heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    margin-block: 30px 40px;
+    margin-block: 25px 37px;
   }
   .contact-heading :where(h2) {
-    font-size: clamp(50px, 5.7vw, 80px);
+    font-size: clamp(42px, 5vw, 68px);
   }
-  .contact-heading :where(h2) :where(em) {
-    color: #e6bb55;
+  .contact-heading :where(h2) :where(span) {
+    color: #c8b2da;
   }
   .contact-arrow {
     display: grid;
     place-content: center;
-    width: 100px;
-    height: 100px;
+    width: 79px;
+    height: 79px;
     flex-shrink: 0;
-    border: 1px solid #c1ab6b;
+    border: 1px solid #6e647c;
     border-radius: 50%;
-    outline: 1px solid #c1ab6b;
-    outline-offset: 5px;
-    transition: transform 0.2s;
+    transition:
+      background 180ms,
+      transform 180ms;
   }
   .contact-arrow:hover {
-    transform: rotate(10deg);
+    background: #6e647c44;
+    transform: translate(2px, -2px);
   }
   .contact-arrow :where(svg) {
-    width: 45px;
-    height: 45px;
+    width: 32px;
+    height: 32px;
   }
   .contact-bottom {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 35px;
-    border-top: 1px solid #7c8b6c;
-    padding-top: 27px;
+    border-top: 1px solid #514a5b;
+    padding-top: 25px;
   }
   .email-link {
     display: inline-flex;
     align-items: center;
     gap: 15px;
-    font-size: 19px;
+    font-size: 17px;
   }
   .contact-bottom :where(p) {
-    color: #e0ddc5;
+    color: #c4bdcd;
     font-size: 11px;
   }
   .contact-bottom :where(p) :where(a) {
@@ -64,10 +64,9 @@
     gap: 8px;
     text-decoration: underline;
     text-underline-offset: 4px;
-    margin-top: 4px;
-    color: #f1d49b;
+    color: #f0e6d0;
   }
-  .contact-bottom :where(p) :where(a) :where(svg) {
+  .contact-bottom :where(p) :where(svg) {
     width: 13px;
     height: 13px;
   }
@@ -76,29 +75,26 @@
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    padding-block: 32px;
+    padding-block: 30px;
   }
   .footer-name {
-    font-family: var(--font-editorial), Georgia, serif;
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 500;
     line-height: 1;
   }
-  .footer-name :where(span) {
+  .footer-name > :where(span) {
     display: block;
-    font-family: var(--font-sans), sans-serif;
     color: var(--muted);
-    font-size: 7px;
+    font-size: 8px;
     font-weight: 400;
-    letter-spacing: 0.08em;
     margin-top: 9px;
   }
-  .site-footer > div {
+  .site-footer > :where(div) {
     display: flex;
-    gap: 25px;
+    gap: 24px;
     font-size: 10px;
   }
-  .site-footer > div :where(a) {
+  .site-footer > :where(div) :where(a) {
     display: inline-flex;
     align-items: center;
     gap: 5px;

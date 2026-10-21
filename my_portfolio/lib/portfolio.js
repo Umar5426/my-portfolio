@@ -95,7 +95,6 @@ export const leadership = [
 export const projects = [
   {
     number: "02",
-    title: "Documents, thoughtfully transformed.",
     name: "AI document standardization",
     organization: "Tartigrade Inc.",
     category: "Software architecture · Project delivery",
@@ -107,7 +106,6 @@ export const projects = [
   },
   {
     number: "03",
-    title: "Built around a community.",
     name: "Donation centre web application",
     organization: "MCC Downtown Centre",
     category: "Technical leadership · Community",
@@ -119,7 +117,6 @@ export const projects = [
   },
   {
     number: "04",
-    title: "One place. The right access.",
     name: "Employee Management Dashboard",
     organization: "Personal project",
     category: "Full stack · Web & mobile",
