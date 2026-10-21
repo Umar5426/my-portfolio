@@ -36,25 +36,35 @@
 
 @layer base {
   :root {
-    --page: #f8f8f2;
-    --paper: #eeefe7;
-    --ink: #272b25;
-    --muted: #656b60;
-    --line: #d9ddd1;
-    --accent: #e3ef93;
-    --accent-ink: #485523;
-    --header: #f8f8f2ed;
+    --page: #fbf3e7;
+    --paper: #f0e5dc;
+    --ink: #3c2444;
+    --muted: #79636d;
+    --line: #dfcfd0;
+    --accent: #f4d363;
+    --accent-ink: #684082;
+    --header: #fbf3e7ed;
     color-scheme: light;
+    --red: #b52e43;
+    --purple: #684082;
+    --gold: #a37a2a;
+    --rose-glow: #efc3b333;
+    --gold-glow: #f2d58a40;
   }
   :root[data-theme="dark"] {
-    --page: #191d19;
-    --paper: #222822;
-    --ink: #f1f1e8;
-    --muted: #b2bbad;
-    --line: #394138;
-    --accent-ink: #d8e78f;
-    --header: #191d19ed;
+    --page: #211527;
+    --paper: #302035;
+    --ink: #f8ecdf;
+    --muted: #c6aebf;
+    --line: #533a51;
+    --accent-ink: #deb1ed;
+    --header: #211527ed;
     color-scheme: dark;
+    --red: #f493a0;
+    --purple: #d4aae4;
+    --gold: #e3bd6a;
+    --rose-glow: #a6384a1a;
+    --gold-glow: #d29b3812;
   }
   html {
     scroll-behavior: smooth;
@@ -69,8 +79,8 @@
     -webkit-font-smoothing: antialiased;
   }
   ::selection {
-    color: #272b25;
-    background: #dbe987;
+    color: #3c2444;
+    background: #f4d363;
   }
   a,
   button {
@@ -79,7 +89,7 @@
   a:focus-visible,
   button:focus-visible,
   summary:focus-visible {
-    outline: 3px solid #829c37;
+    outline: 3px solid var(--red);
     outline-offset: 6px;
     border-radius: 4px;
   }
@@ -99,7 +109,7 @@
     font-size: clamp(44px, 5.1vw, 70px);
   }
   h2 em {
-    color: var(--muted);
+    color: var(--purple);
   }
   p {
     text-wrap: pretty;
@@ -137,8 +147,8 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #718c32;
-    box-shadow: 0 0 0 4px #718c3214;
+    background: var(--red);
+    box-shadow: 0 0 0 4px #b52e4310;
     flex-shrink: 0;
   }
   .button {
@@ -147,7 +157,7 @@
     justify-content: center;
     gap: 28px;
     padding: 16px 24px;
-    border-radius: 7px;
+    border-radius: 100px;
     font-size: 13px;
     font-weight: 600;
     line-height: 1.5;
@@ -159,11 +169,11 @@
     transform: translateY(-3px);
   }
   .button-dark {
-    color: var(--page);
-    background: var(--ink);
+    color: #fff7ef;
+    background: #b52e43;
   }
-  .button-lime {
-    color: #272b25;
+  .button-gold {
+    color: #3c2444;
     background: var(--accent);
   }
   .text-link {
