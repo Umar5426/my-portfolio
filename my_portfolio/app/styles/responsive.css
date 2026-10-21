@@ -1,0 +1,352 @@
+@layer responsive {
+  @media (min-width: 1600px) {
+    .hero {
+      padding-block: 110px 120px;
+    }
+  }
+  @media (max-width: 1100px) {
+    .container {
+      width: calc(100% - 64px);
+    }
+    .hero {
+      gap: 35px;
+    }
+    .hero h1 {
+      font-size: clamp(62px, 7.2vw, 80px);
+    }
+    .hero-links {
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-description {
+      font-size: 14px;
+    }
+    .current-role {
+      left: -15px;
+      right: 5px;
+      padding: 18px;
+    }
+    .featured-copy {
+      padding: 34px;
+    }
+    .voucher-scene {
+      min-height: 570px;
+    }
+    .voucher-card {
+      width: 78%;
+      padding: 23px;
+    }
+    .voucher-card-back {
+      height: 280px;
+    }
+    .about-section {
+      gap: 50px;
+    }
+    .contact-bottom {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 14px;
+    }
+  }
+  @media (max-width: 760px) {
+    html {
+      scroll-padding-top: 85px;
+    }
+    .container {
+      width: calc(100% - 40px);
+    }
+    .section {
+      padding-block: 70px;
+    }
+    .nav-inner {
+      height: 76px;
+    }
+    .wordmark {
+      font-size: 13px;
+    }
+    .monogram {
+      width: 37px;
+      height: 37px;
+      font-size: 19px;
+      border-radius: 8px;
+    }
+    .wordmark-caption {
+      font-size: 9px;
+    }
+    .desktop-nav,
+    .nav-contact {
+      display: none;
+    }
+    .nav-actions {
+      gap: 14px;
+    }
+    .mobile-menu {
+      display: block;
+    }
+    .mobile-menu summary {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 12px 5px;
+      cursor: pointer;
+    }
+    .mobile-menu summary::-webkit-details-marker {
+      display: none;
+    }
+    .mobile-menu summary span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--ink);
+      transition: transform 0.2s;
+    }
+    .mobile-menu[open] summary span:first-child {
+      transform: translateY(3.5px) rotate(45deg);
+    }
+    .mobile-menu[open] summary span:last-child {
+      transform: translateY(-3.5px) rotate(-45deg);
+    }
+    .mobile-menu nav {
+      position: absolute;
+      top: 76px;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: var(--page);
+      padding: 22px;
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 12px 24px #00000010;
+    }
+    .mobile-menu nav a {
+      padding: 12px;
+      font-size: 18px;
+    }
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 45px;
+      padding-block: 48px 72px;
+    }
+    .hero h1 {
+      font-size: clamp(58px, 12vw, 88px);
+    }
+    .hero-description {
+      max-width: 440px;
+      font-size: 14px;
+    }
+    .hero .eyebrow {
+      font-size: 9px;
+    }
+    .hero-links {
+      gap: 23px;
+    }
+    .hero-links .text-link {
+      font-size: 12px;
+    }
+    .hero-footnote {
+      margin-top: 30px;
+    }
+    .hero-visual {
+      width: min(88%, 440px);
+      margin-inline: auto;
+      padding-bottom: 22px;
+    }
+    .portrait-frame {
+      aspect-ratio: 1.05;
+    }
+    .portrait {
+      object-position: 50% 29%;
+    }
+    .current-role {
+      left: -16px;
+      right: 15px;
+      bottom: -17px;
+    }
+    .current-role strong {
+      font-size: 17px;
+    }
+    .portrait-caption {
+      font-size: 8px;
+      bottom: 20px;
+    }
+    .focus-inner {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px 16px;
+      padding-block: 18px;
+      font-size: 8px;
+    }
+    .focus-inner > :where(span:last-child, span:nth-last-child(2)) {
+      display: none;
+    }
+    .strip-star {
+      font-size: 18px;
+    }
+    .section-heading {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 23px;
+      margin-bottom: 35px;
+    }
+    .section-heading > p {
+      font-size: 12px;
+    }
+    .section-kicker {
+      font-size: 9px;
+      margin-bottom: 20px;
+    }
+    .featured-project {
+      grid-template-columns: 1fr;
+    }
+    .featured-copy {
+      padding: 27px;
+    }
+    .project-topline {
+      margin-bottom: 35px;
+    }
+    .featured-copy h3 {
+      font-size: 46px;
+    }
+    .featured-copy p {
+      font-size: 13px;
+      max-width: none;
+    }
+    .voucher-scene {
+      min-height: 390px;
+    }
+    .voucher-card {
+      max-width: 300px;
+      width: 72%;
+      padding: 23px;
+    }
+    .voucher-title {
+      font-size: 36px;
+      margin-block: 29px 24px;
+    }
+    .voucher-card-back {
+      height: 272px;
+    }
+    .scene-index {
+      top: 22px;
+      left: 20px;
+    }
+    .scene-caption {
+      left: 20px;
+      font-size: 6px;
+    }
+    .project-grid {
+      grid-template-columns: 1fr;
+      gap: 38px;
+      margin-top: 35px;
+    }
+    .project-image {
+      padding: 35px 28px;
+    }
+    .project-heading h3 {
+      font-size: 28px;
+    }
+    .all-projects {
+      font-size: 11px;
+      margin-top: 35px;
+      gap: 15px;
+    }
+    .experience-section h2 {
+      font-size: 43px;
+    }
+    .experience-row {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding-block: 28px;
+    }
+    .experience-content h3 {
+      font-size: 24px;
+    }
+    .experience-location {
+      flex-direction: row;
+      align-items: center;
+      font-size: 10px;
+    }
+    .experience-index {
+      font-size: 17px;
+    }
+    .about-section {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+    .about-intro h2 {
+      font-size: clamp(42px, 9vw, 60px);
+    }
+    .about-signature {
+      display: none;
+    }
+    .about-copy {
+      padding-top: 8px;
+    }
+    .about-copy > p.about-lead {
+      font-size: 22px;
+    }
+    .skills-list > div {
+      grid-template-columns: 1fr 1.7fr;
+      gap: 15px;
+    }
+    .contact-section {
+      padding-block: 35px;
+    }
+    .contact-top {
+      font-size: 7px;
+      gap: 18px;
+    }
+    .contact-top .section-kicker {
+      font-size: 8px;
+    }
+    .contact-heading {
+      margin-block: 35px;
+      gap: 12px;
+    }
+    .contact-heading h2 {
+      font-size: clamp(45px, 9vw, 65px);
+    }
+    .contact-arrow {
+      width: 62px;
+      height: 62px;
+      flex-shrink: 0;
+    }
+    .contact-arrow svg {
+      width: 30px;
+      height: 30px;
+    }
+    .email-link {
+      font-size: clamp(13px, 3.8vw, 17px);
+      gap: 7px;
+    }
+    .email-link svg {
+      width: 16px;
+      height: 16px;
+    }
+    .contact-bottom p {
+      font-size: 10px;
+    }
+    .site-footer {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 21px;
+      padding-block: 26px;
+    }
+    .site-footer > div {
+      gap: 28px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      transition: none;
+      animation: none;
+    }
+  }
+}
