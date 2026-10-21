@@ -2,14 +2,6 @@ import localFont from "next/font/local";
 import Script from "next/script";
 import "./globals.css";
 
-const editorial = localFont({
-  src: [
-    { path: "./fonts/cormorant-garamond.woff2", weight: "300 700", style: "normal" },
-    { path: "./fonts/cormorant-garamond-italic.woff2", weight: "300 700", style: "italic" },
-  ],
-  variable: "--font-editorial",
-  display: "swap",
-});
 const sans = localFont({
   src: "./fonts/dm-sans.woff2",
   weight: "100 1000",
@@ -21,11 +13,11 @@ export const metadata = {
   metadataBase: new URL("https://umars-portfolio-one.vercel.app"),
   title: "Umar Khan — IT Systems Manager & Software Engineer",
   description:
-    "Umar Khan, IT Systems Manager at Checker Cabs and University of Calgary software engineering graduate. A collection of work in systems, software architecture, product and technical leadership.",
+    "Umar Khan, IT Systems Manager at Checker Cabs and University of Calgary software engineering graduate. Systems, software architecture, product development and technical leadership.",
   authors: [{ name: "Muhammed Umar Khan" }],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Umar Khan — Systems & Software",
+    title: "Umar Khan — Systems, Software & Delivery",
     description:
       "IT Systems Manager at Checker Cabs. Creator of e-vouchers. Building useful technology in Calgary, Alberta.",
     type: "website",
@@ -46,7 +38,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
-      <body className={`${editorial.variable} ${sans.variable}`}>
+      <body className={sans.variable}>
         <Script
           id="portfolio-theme"
           strategy="beforeInteractive"

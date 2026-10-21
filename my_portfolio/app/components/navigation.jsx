@@ -4,6 +4,7 @@ import { useRef, useSyncExternalStore } from "react";
 import { ArrowUpRight } from "./icons";
 
 const navigation = [
+  ["Expertise", "#expertise"],
   ["Work", "#work"],
   ["Experience", "#experience"],
   ["About", "#about"],
@@ -73,7 +74,7 @@ export default function Navigation() {
             uk<span>.</span>
           </span>
           <span>
-            Umar Khan<span className="wordmark-caption">An engineer's collection</span>
+            Umar Khan<span className="wordmark-caption">Systems. Software. Delivery.</span>
           </span>
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">
