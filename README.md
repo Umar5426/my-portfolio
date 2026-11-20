@@ -1,5 +1,11 @@
 # Umar Khan — Portfolio
 
+## ENSF519.02 assignment branch
+
+Docker, Kubernetes and Ansible assignment instructions: [START_HERE.md](START_HERE.md).
+The Docker image builds this Next.js portfolio as a static export and serves it with Nginx on port 80.
+`npm run build` continues to use the normal Vercel build; `npm run build:static` selects the assignment export.
+
 Personal portfolio for Umar Khan, IT Systems Manager at Checker Cabs in Calgary.
 
 The site presents Umar's work at Checker Cabs, Tartigrade Inc., MBC Shahid and Al Arabiya News Channel, alongside technical leadership at MCC Downtown Centre and an employee management project. E-vouchers enquiries go to Checker Sales. Project graphics are decorative illustrations, not product screenshots or redeemable vouchers.

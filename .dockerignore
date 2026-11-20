@@ -1,0 +1,16 @@
+# Allow only the application and web-server configuration into the build.
+**
+!Dockerfile
+!my_portfolio/
+!my_portfolio/**
+!deploy/
+!deploy/nginx.conf
+my_portfolio/node_modules
+my_portfolio/.next
+my_portfolio/out
+my_portfolio/.git
+my_portfolio/.vercel
+my_portfolio/.env*
+my_portfolio/**/*.pem
+my_portfolio/**/*.key
+my_portfolio/audit.json

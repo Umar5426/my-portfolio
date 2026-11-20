@@ -5,6 +5,7 @@
     "includes": [
       "**",
       "!.next",
+      "!out",
       "!node_modules",
       "!public",
       "!assets",
