@@ -115,8 +115,9 @@ echo "STEP 4: Scale to $REPLICAS replicas and wait for the rollout"
 "${KUBE[@]}" rollout restart "deployment/$APP_NAME"
 kubectl --namespace "$NAMESPACE" rollout status \
     "deployment/$APP_NAME" --timeout=300s
-kubectl --namespace "$NAMESPACE" wait --for=condition=Ready pods \
-    -l "app=$APP_NAME" --timeout=180s
+# Rollout status checks the updated replicas. A label-wide pod wait also
+# selects terminating pods from the previous ReplicaSet and can time out
+# after a successful rollout. Verify deployment readiness below instead.
 ready="$("${KUBE[@]}" get deployment "$APP_NAME" \
     -o jsonpath='{.status.readyReplicas}')"
 if [[ ! "$ready" =~ ^[0-9]+$ ]] || (( ready < REPLICAS )); then

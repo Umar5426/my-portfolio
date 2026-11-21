@@ -104,6 +104,13 @@ class AutomationTests(unittest.TestCase):
         self.assertTrue(any("scale" in c and "--replicas=3" in c for c in commands))
         self.assertTrue(any("rollout" in c and "status" in c for c in commands))
 
+    def test_ready_rollout_not_blocked_by_retiring_pod(self):
+        # A terminating old pod never becomes Ready again, even when all
+        # updated replicas are ready and rollout status has succeeded.
+        result = self.script(MOCK_FAIL="--for=condition=Ready pods")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("DEPLOYMENT_SUCCESS", result.stdout)
+
     def test_repeated_script_does_not_use_duplicate_create(self):
         self.assertEqual(self.script().returncode, 0)
         self.assertEqual(self.script().returncode, 0)
