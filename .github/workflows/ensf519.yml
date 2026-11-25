@@ -1,0 +1,55 @@
+name: ENSF519 assignment validation
+
+on:
+  push:
+    branches: [ENSF519.02]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: my_portfolio/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check the existing Vercel build
+        working-directory: my_portfolio
+        run: |
+          npm ci --no-audit --no-fund
+          npm run lint
+          npm run build
+      - name: Check deployment automation
+        run: |
+          python -m pip install ansible-core==2.19.15 shellcheck-py
+          bash -n deploy-k8s-app.sh
+          shellcheck deploy-k8s-app.sh
+          printf '[test]\nansible-node2 ansible_connection=local\n' > "$RUNNER_TEMP/inventory.ini"
+          ansible-playbook -i "$RUNNER_TEMP/inventory.ini" deploy-automation.yml --syntax-check
+          python -m unittest discover -s tests -v
+      - name: Build the real multi-stage Docker image
+        run: docker build --pull -t portfolio-assignment:test .
+      - name: Test the running Nginx container on port 81
+        run: |
+          docker run -d --name portfolio-test -p 81:80 portfolio-assignment:test
+          docker ps --filter name=portfolio-test
+          python tools/smoke_container.py --base-url http://127.0.0.1:81
+          docker cp portfolio-test:/usr/share/nginx/html/index.html /tmp/image-index.html
+          curl --fail --silent --show-error http://127.0.0.1:81/ -o /tmp/served-index.html
+          cmp /tmp/image-index.html /tmp/served-index.html
+      - name: Show container logs and clean up
+        if: always()
+        run: |
+          docker logs portfolio-test 2>/dev/null || true
+          docker rm -f portfolio-test 2>/dev/null || true

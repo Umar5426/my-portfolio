@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import portrait from "@/assets/profile-img.png";
 import { checker, education, experience, profile, projects, skills } from "@/lib/portfolio";
 import { ArrowDown, ArrowUpRight } from "./components/icons";
@@ -135,7 +136,9 @@ export default function Home() {
           <article className="featured-project" id="e-vouchers" data-reveal>
             <div className="featured-copy">
               <p className="eyebrow">CHECKER CABS / BUSINESS SOFTWARE</p>
-              <h3>e-vouchers</h3>
+              <h3>
+                <Link href="/projects/e-vouchers">e-vouchers</Link>
+              </h3>
               <p className="project-subtitle">Created for Checker Cabs.</p>
               <p>
                 I developed e-vouchers for Checker Cabs, alongside internal applications and
@@ -182,7 +185,13 @@ export default function Home() {
                   <p className="eyebrow">
                     {project.number} / {project.category}
                   </p>
-                  <h3>{project.name}</h3>
+                  <h3>
+                    <Link
+                      href={`/projects/${project.style === "documents" ? "document-standardization" : project.style === "community" ? "community-web-application" : "employee-management"}`}
+                    >
+                      {project.name}
+                    </Link>
+                  </h3>
                   <p className="project-organization">
                     {project.organization} <span>{project.period}</span>
                   </p>
@@ -196,14 +205,9 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <a
-            className="all-projects text-link"
-            href={profile.github}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            More projects on GitHub <ArrowUpRight />
-          </a>
+          <Link className="all-projects text-link" href="/projects">
+            Explore all projects <ArrowUpRight />
+          </Link>
         </section>
 
         <section id="experience" className="experience-section" aria-labelledby="experience-title">

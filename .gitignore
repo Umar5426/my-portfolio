@@ -1,0 +1,12 @@
+settings.json
+deployment-vars.json
+work/
+evidence/runs/
+evidence/screenshots/
+__pycache__/
+*.pyc
+*.pem
+*.key
+.env*
+Assignment03_Implementation*.docx
+Assignment03_Implementation*.pdf

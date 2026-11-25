@@ -1,0 +1,79 @@
+---
+- name: Automate Kubernetes Web Deployment on Target Node via Shell Script
+  hosts: test
+  become: true
+  become_user: root
+  gather_facts: false
+  vars:
+    # Supply the real Docker Hub username with -e @deployment-vars.json.
+    dockerhub_username: ""
+    app_name: web-project
+    k8s_namespace: default
+    replicas: 3
+    kubeconfig: /root/.kube/config
+    node_public_ip: ""
+    expected_index_sha256: ""
+
+  pre_tasks:
+    - name: Validate deployment settings
+      ansible.builtin.assert:
+        that:
+          - dockerhub_username is match('^[a-z0-9][a-z0-9_-]+$')
+          - (replicas | int) >= 3
+          - kubeconfig is match('^/')
+        fail_msg: >-
+          Set dockerhub_username, replicas >= 3 and an absolute kubeconfig
+          path using -e @deployment-vars.json.
+
+    - name: Check the Minikube kubeconfig as root
+      ansible.builtin.stat:
+        path: "{{ kubeconfig }}"
+      register: kubeconfig_file
+
+    - name: Require the existing Minikube configuration
+      ansible.builtin.assert:
+        that:
+          - kubeconfig_file.stat.exists
+          - kubeconfig_file.stat.isreg | default(false)
+        fail_msg: >-
+          Minikube must already be running on ansible-node2. Use the
+          kubeconfig created by sudo minikube start --driver=none.
+
+    - name: Verify cluster connectivity including in check mode
+      ansible.builtin.command:
+        argv:
+          - kubectl
+          - "--kubeconfig={{ kubeconfig }}"
+          - --request-timeout=30s
+          - cluster-info
+      changed_when: false
+      check_mode: false
+
+  tasks:
+    - name: Transfer and execute deployment shell script on target node
+      ansible.builtin.script:
+        cmd: >-
+          {{ (playbook_dir ~ '/deploy-k8s-app.sh') | quote }}
+          {{ (dockerhub_username ~ '/web-project:v1') | quote }}
+        executable: /bin/bash
+      environment:
+        KUBECONFIG: "{{ kubeconfig }}"
+        APP_NAME: "{{ app_name }}"
+        NAMESPACE: "{{ k8s_namespace }}"
+        REPLICAS: "{{ replicas | string }}"
+        NODE_PUBLIC_IP: "{{ node_public_ip }}"
+        EXPECTED_INDEX_SHA256: "{{ expected_index_sha256 }}"
+      register: script_output
+      when: not ansible_check_mode
+
+    - name: Output script execution logs
+      ansible.builtin.debug:
+        msg: "{{ script_output.stdout_lines | default([]) }}"
+      when: not ansible_check_mode
+
+    - name: Explain check mode result
+      ansible.builtin.debug:
+        msg: >-
+          Settings, kubeconfig and cluster connectivity were checked.
+          The deployment script was skipped; no cluster changes were made.
+      when: ansible_check_mode
