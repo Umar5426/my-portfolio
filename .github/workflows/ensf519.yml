@@ -35,7 +35,8 @@ jobs:
           python -m pip install ansible-core==2.19.15 shellcheck-py
           bash -n deploy-k8s-app.sh
           shellcheck deploy-k8s-app.sh
-          ansible-playbook -i inventory.example.ini deploy-automation.yml --syntax-check
+          printf '[test]\nansible-node2 ansible_connection=local\n' > "$RUNNER_TEMP/inventory.ini"
+          ansible-playbook -i "$RUNNER_TEMP/inventory.ini" deploy-automation.yml --syntax-check
           python -m unittest discover -s tests -v
       - name: Build the real multi-stage Docker image
         run: docker build --pull -t portfolio-assignment:test .

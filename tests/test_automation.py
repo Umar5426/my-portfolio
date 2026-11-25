@@ -197,14 +197,14 @@ class AutomationTests(unittest.TestCase):
         self.assertTrue(self.manifests.exists())
 
     def test_runner_defaults_to_assignment_branch(self):
-        settings = json.loads((ROOT / "settings.example.json").read_text())
+        settings = runner.DEFAULT_SETTINGS.copy()
         self.assertEqual(settings["github_branch"], "ENSF519.02")
         self.assertEqual(settings["github_url"], "https://github.com/Umar5426/my-portfolio.git")
         settings.update(dockerhub_username="testuser", node2_public_ip="203.0.113.10")
         runner.validate_settings(settings)
 
     def test_runner_rejects_wrong_branch(self):
-        settings = json.loads((ROOT / "settings.example.json").read_text())
+        settings = runner.DEFAULT_SETTINGS.copy()
         settings.update(dockerhub_username="testuser", node2_public_ip="203.0.113.10", github_branch="main")
         with self.assertRaises(ValueError):
             runner.validate_settings(settings)

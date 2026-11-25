@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the actual assignment on ansible-master; never synthesize evidence."""
+"""Build and deploy the portfolio from ansible-master."""
 import argparse
 import hashlib
 import ipaddress
@@ -17,6 +17,7 @@ from datetime import datetime, timezone
 from urllib.request import urlopen
 
 ROOT = Path(__file__).resolve().parent
+DEFAULT_SETTINGS = {'github_url': 'https://github.com/Umar5426/my-portfolio.git', 'github_branch': 'ENSF519.02', 'dockerhub_username': '', 'node2_public_ip': '', 'inventory': '/etc/ansible/hosts', 'kubeconfig': '/root/.kube/config', 'namespace': 'default', 'app_name': 'web-project', 'replicas': 3, 'local_port': 81}
 
 
 def validate_settings(settings):
@@ -49,7 +50,7 @@ def validate_settings(settings):
 
 
 def load_settings(path):
-    defaults = json.loads((ROOT / "settings.example.json").read_text())
+    defaults = DEFAULT_SETTINGS.copy()
     if path.exists():
         defaults.update(json.loads(path.read_text()))
     else:
@@ -149,7 +150,7 @@ def main():
         inventory_text = run.command("00-inventory", ["ansible-inventory", "-i", inventory, "--list"])
         inventory_data = json.loads(inventory_text)
         if "ansible-node2" not in inventory_data.get("test", {}).get("hosts", []):
-            raise ValueError("Inventory [test] must include ansible-node2. See inventory.example.ini.")
+            raise ValueError("Inventory [test] must include ansible-node2.")
         repo = work / "mini-project"
         run.command("01-git-clone", ["git", "clone", "--single-branch", "--branch", settings["github_branch"], "--", settings["github_url"], repo])
         summary["source_commit"] = run.command("01-source-commit", ["git", "rev-parse", "HEAD"], cwd=repo).strip()
