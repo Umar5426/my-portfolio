@@ -1,13 +1,15 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useRef, useSyncExternalStore } from "react";
 import { ArrowUpRight } from "./icons";
 
 const navigation = [
-  ["Expertise", "#expertise"],
-  ["Work", "#work"],
-  ["Experience", "#experience"],
-  ["About", "#about"],
+  ["Expertise", "/#expertise"],
+  ["Work", "/projects"],
+  ["Experience", "/experience"],
+  ["About", "/#about"],
 ];
 
 function subscribeTheme(callback) {
@@ -63,32 +65,39 @@ function ThemeToggle() {
 
 export default function Navigation() {
   const menu = useRef(null);
+  const pathname = usePathname();
   function closeMenu() {
     if (menu.current) menu.current.open = false;
   }
   return (
-    <header className="site-header">
+    <header className={`site-header${pathname !== "/" ? " interior-header" : ""}`}>
       <div className="container nav-inner">
-        <a className="wordmark" href="#home" aria-label="Umar Khan, back to top">
+        <Link className="wordmark" href="/" aria-label="Umar Khan, home">
           <span className="monogram">
             uk<span>.</span>
           </span>
           <span>
             Umar Khan<span className="wordmark-caption">Systems. Software. Delivery.</span>
           </span>
-        </a>
+        </Link>
         <nav className="desktop-nav" aria-label="Main navigation">
           {navigation.map(([label, href]) => (
-            <a key={href} href={href}>
+            <Link
+              key={href}
+              href={href}
+              aria-current={
+                pathname === href || pathname.startsWith(`${href}/`) ? "page" : undefined
+              }
+            >
               {label}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="nav-actions">
           <ThemeToggle />
-          <a className="nav-contact" href="#contact">
+          <Link className="nav-contact" href="/contact">
             Let&apos;s talk <ArrowUpRight />
-          </a>
+          </Link>
           <details
             className="mobile-menu"
             ref={menu}
@@ -111,11 +120,11 @@ export default function Navigation() {
               }}
             >
               {navigation.map(([label, href]) => (
-                <a key={href} href={href}>
+                <Link key={href} href={href}>
                   {label}
-                </a>
+                </Link>
               ))}
-              <a href="#contact">Contact</a>
+              <Link href="/contact">Contact</Link>
             </nav>
           </details>
         </div>

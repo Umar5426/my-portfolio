@@ -9,7 +9,8 @@ const nextConfig = {
   poweredByHeader: false,
   turbopack: { root: projectRoot },
   outputFileTracingRoot: projectRoot,
-  ...(staticExport ? { output: "export", images: { unoptimized: true } } : {}),
+  // Directory indexes keep nested pages accessible on direct visits and refreshes.
+  ...(staticExport ? { output: "export", trailingSlash: true, images: { unoptimized: true } } : {}),
   // Nginx supplies these headers for the static assignment build.
   ...(staticExport
     ? {}

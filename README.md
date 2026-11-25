@@ -6,6 +6,20 @@ Docker, Kubernetes and Ansible assignment instructions: [START_HERE.md](START_HE
 The Docker image builds this Next.js portfolio as a static export and serves it with Nginx on port 80.
 `npm run build` continues to use the normal Vercel build; `npm run build:static` selects the assignment export.
 
+### Course website pages
+
+The `ENSF519.02` branch retains the original homepage design and adds real page routes:
+
+- `/`: original portfolio homepage, with navigation to the new pages.
+- `/projects`: search, category filters and saved projects. Saved selections persist in the same browser when local storage is available.
+- `/projects/[slug]`: six individual project pages, with expandable workflow details.
+- `/experience`: industry and leadership views, expandable roles and technical capabilities, and the résumé download.
+- `/contact`: required-field and email validation, a reviewable email draft, and copy/open-email actions. It prepares a draft; it does not operate a message delivery service.
+
+All pages support the existing light/dark theme and mobile navigation. Every project detail page is generated during the static build, so the existing Nginx/Docker deployment can serve direct links and refreshes. The primary course pages are Home, Projects, Experience and Contact.
+
+The existing production Vercel URL below belongs to the main portfolio. Course-branch changes appear there only if that deployment is explicitly updated; use the branch's preview deployment or run this branch locally for the recording. See [the demonstration guide](my_portfolio/docs/course-demo.md).
+
 Personal portfolio for Umar Khan, IT Systems Manager at Checker Cabs in Calgary.
 
 The site presents Umar's work at Checker Cabs, Tartigrade Inc., MBC Shahid and Al Arabiya News Channel, alongside technical leadership at MCC Downtown Centre and an employee management project. E-vouchers enquiries go to Checker Sales. Project graphics are decorative illustrations, not product screenshots or redeemable vouchers.

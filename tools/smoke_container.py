@@ -49,6 +49,25 @@ def main():
         raise RuntimeError("Nginx health endpoint failed")
     assets = Assets()
     assets.feed(html.decode("utf-8"))
+    # Check direct links as well as the homepage: exported .html routes must
+    # resolve through Nginx, including on a fresh visit or browser refresh.
+    pages = {
+        "projects": b"Different challenges.",
+        "experience": b"Connecting the work.",
+        "contact": b"Good work starts",
+        "projects/e-vouchers": b"The context",
+        "projects/document-standardization": b"The context",
+        "projects/community-web-application": b"The context",
+        "projects/employee-management": b"The context",
+        "projects/heartcare-ml": b"The context",
+        "projects/aws-performance-study": b"The context",
+    }
+    for route, marker in pages.items():
+        page, _ = fetch(urljoin(base, route))
+        if marker not in page:
+            raise RuntimeError(f"Expected page content missing at /{route}")
+        assets.feed(page.decode("utf-8"))
+        print(f"OK /{route}")
     if not any("/_next/" in p for p in assets.paths):
         raise RuntimeError("Expected the portfolio's Next.js assets in the export")
     checked = 0
@@ -67,7 +86,7 @@ def main():
             raise
     else:
         raise RuntimeError("Unknown routes should return 404")
-    print(f"PASS: portfolio, headers, health endpoint, 404 and {checked} static assets")
+    print(f"PASS: homepage, {len(pages)} additional pages, headers, health endpoint, 404 and {checked} static assets")
 
 
 if __name__ == "__main__":
